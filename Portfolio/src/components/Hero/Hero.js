@@ -12,8 +12,7 @@ const Hero = (props) => (
       Made usign React an Next.js
     </SectionTitle>
     <SectionText>
-    An experienced professional and dedicated individual with strong documentation and more than 1 year of experience in the retail website domain, particularly in HTML, JavaScript, Java/J2EE, C, C++, UX/UI and DBMS. Ability to prioritize multiple tasks with strong communications skills. Skilled in using relational databases such as MySQL and Postgres SQL to simplify complex data models. 
-    </SectionText>
+    An experienced professional and dedicated individual with more than 1.5 years of experience in Retail domain, particularly in Flutter, Dart, HTML, CSS, JavaScript, Java/J2EE, C++, Node.JS, UI/UX and DBMS. Ability to prioritize multiple tasks with strong communications skills. Skilled in using relational databases such as MySQL and PostgreSQL to simplify complex data models and NoSQL databases such as MongoDB. Excellent communication, analytical, problem solving and documentation skills.    </SectionText>
     <Button onClick={()=> window.location = "https://www.linkedin.com/feed/"}>Learn More</Button>
     </LeftSection>
 </Section>
