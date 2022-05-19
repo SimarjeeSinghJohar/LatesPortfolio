@@ -11,9 +11,10 @@ const Hero = (props) => (
       Welcome to Simarjeet's Portfolio<br />
       Made usign React an Next.js
     </SectionTitle>
+    <SectionTitle>Professional Summary</SectionTitle>
     <SectionText>
     An experienced professional and dedicated individual with more than 1.5 years of experience in Retail domain, particularly in Flutter, Dart, HTML, CSS, JavaScript, Java/J2EE, C++, Node.JS, UI/UX and DBMS. Ability to prioritize multiple tasks with strong communications skills. Skilled in using relational databases such as MySQL and PostgreSQL to simplify complex data models and NoSQL databases such as MongoDB. Excellent communication, analytical, problem solving and documentation skills.    </SectionText>
-    <Button onClick={()=> window.location = "https://www.linkedin.com/feed/"}>Learn More</Button>
+    <Button onClick={()=> window.location = "https://www.linkedin.com/in/simarjeet-singh-johar"}>Learn More</Button>
     </LeftSection>
 </Section>
 );
