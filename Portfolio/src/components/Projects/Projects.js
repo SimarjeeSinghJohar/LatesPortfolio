@@ -15,7 +15,6 @@ const Projects = () => (
   <Section nopadding id='projects'>
     <SectionDivider />
       <SectionTitle main>Projects</SectionTitle>
-      <GridContainer>
         {projects.map((project) => (
           <BlogCard key={project.id}>
             <Img  src={project.image} />
@@ -42,7 +41,6 @@ const Projects = () => (
           </BlogCard>
           
         ))}
-      </GridContainer>
   </Section>
 );
 

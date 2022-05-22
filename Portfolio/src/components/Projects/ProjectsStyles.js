@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const Img = styled.img`
- max-width:100%;
-  max-height:100%;
-  width:300px;
-  height:200px;
+
+  width:400px;
+  height:300px;
   
   object-fit: cover;
   overflow: hidden;
@@ -26,12 +25,12 @@ row-gap: 3rem;
 
 `
 export const BlogCard = styled.div`
-  border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
   background-color: black;
+  margin-top:10px;
 
-  width: 400px;
+  width: 100%;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
   }

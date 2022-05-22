@@ -35,7 +35,7 @@ export const CarouselContainer = styled.ul`
 `
 export const CarouselMobileScrollNode = styled.div`
 
-    background-color: #0094C2;
+    background-color: #;
     width:165px;
     padding: 2px;
 

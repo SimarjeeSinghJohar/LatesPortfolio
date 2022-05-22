@@ -103,6 +103,7 @@ export const ListItem = styled.li`
   flex-direction: column;
   background-color: #469A49;
   padding: 5px;
+  border-radius: 20px;
 
 @media ${props => props.theme.breakpoints.md}{
   max-width: 203px;

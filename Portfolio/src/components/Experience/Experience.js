@@ -8,9 +8,6 @@ const Experience = () => (
     <SectionTitle>
       Experience
     </SectionTitle>
-    <SectionText>
-
-    </SectionText>
     <List>
 
       <ListItem>
@@ -82,7 +79,7 @@ const Experience = () => (
             iLampion Digital Marketing Agency -
             Front-End Developer
           </ListTitle>
-          August 2018 – May 2019
+          August 2018 – May 2019  
           <br />
 
           <ListParagraph>

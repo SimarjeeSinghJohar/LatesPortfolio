@@ -29,7 +29,7 @@ export const MainImage = styled.img`
 
 export const List = styled.ul`
   list-style-type: none;
-  display: grid;
+  display: ;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   margin: 3rem 0;
@@ -86,7 +86,6 @@ export const ListParagraph = styled.p`
   font-size: 18px;
   line-height: 30px;
   color: rgba(255, 255, 255, 0.75);
-  
 
   @media ${props => props.theme.breakpoints.md}{
     font-size: 16px;
@@ -100,11 +99,12 @@ export const ListParagraph = styled.p`
 `
 
 export const ListItem = styled.li`
-  max-width: 320px;
   display: flex;
   flex-direction: column;
   background-color: #B67F50;
+  border-radius: 10px;
   padding: 5px;
+  margin:5px;
 
 @media ${props => props.theme.breakpoints.md}{
   max-width: 203px;

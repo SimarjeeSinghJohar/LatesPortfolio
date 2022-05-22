@@ -15,14 +15,19 @@ const Header = () =>  (
     </Link>
   </Div1>
   <Div2>
-    <li>
-    <Link href="#projects">
-      <NavLink>Projects</NavLink>
+  <li>
+    <Link href="#tech">
+      <NavLink>Technologies</NavLink>
     </Link>
     </li>
     <li>
-    <Link href="#tech">
-      <NavLink>Technologies</NavLink>
+    <Link href="#exp">
+      <NavLink>Experience</NavLink>
+    </Link>
+    </li>
+    <li>
+    <Link href="#projects">
+      <NavLink>Projects</NavLink>
     </Link>
     </li>
     <li>
@@ -30,6 +35,7 @@ const Header = () =>  (
       <NavLink>About</NavLink>
     </Link>
     </li>
+    
     </Div2>
     <Div3>
       <SocialIcons href='https://github.com/'>
