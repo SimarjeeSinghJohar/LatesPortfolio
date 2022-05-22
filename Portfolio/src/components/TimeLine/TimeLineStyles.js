@@ -9,6 +9,7 @@ export const CarouselContainer = styled.ul`
   display: flex;
   justify-content: space-between; 
   /* overflow-x: hidden; */
+  background-color: transparent;
 
   margin-left: 32px;
   &:first-of-type{
@@ -33,9 +34,16 @@ export const CarouselContainer = styled.ul`
   }
 `
 export const CarouselMobileScrollNode = styled.div`
+
+    background-color: #0094C2;
+    width:165px;
+    padding: 2px;
+
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
     min-width: ${({ final }) => final ? `120%;` : `min-content`}
+    background-color: transparent;
+
   }
 `
 
@@ -43,9 +51,12 @@ export const CarouselItem = styled.div`
   background: #0F1624;
   border-radius: 3px;
   max-width: 196px;
+  background-color: transparent;
 
   @media ${props => props.theme.breakpoints.md} {
     max-width: 124px;
+    background-color: transparent;
+
   }
   
   @media ${props => props.theme.breakpoints.sm} {
@@ -59,6 +70,8 @@ export const CarouselItem = styled.div`
     overflow: visible;
     position: relative;
     height: fit-content;
+    background-color: transparent;
+
     
     ${(props) => props.active === props.index ? `opacity: 1` : `opacity: 0.5`}; 
   }
@@ -152,3 +165,6 @@ export const CarouselButtonDot = styled.div`
   width: 3px;
   height: 3px;
 `
+
+
+

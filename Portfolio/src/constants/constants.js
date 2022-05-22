@@ -21,9 +21,11 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: 2017, text: 'Started my journey', },
-  { year: 2018, text: 'Worked as a freelance developer', },
-  { year: 2019, text: 'Founded JavaScript Mastery', },
-  { year: 2020, text: 'Shared my projects with the world', },
-  { year: 2021, text: 'Started my own platform', },
+  { year: 2014, text: ' Bachelor of Technology, Computer Science and Engineering Guru Gobind Singh Indraprastha University, New Delhi, India', },
+  { year: 2018, text: 'Worked as a Front-End developer at iLampion Digital marketing Agency, Inida ', },
+  { year: 2019, text: ' Worked at RedGrape Technologies Private Limited as an	Embedded C Intern', },
+  { year: 2020, text: 'Business and Information System Architecture – Post Graduate Certificate,Fanshawe College, London South Campus', },
+  { year: 2021, text: 'Towards the end of the year started working as a Web-Developer in a company Horizon Quest, ON', },
+  { year: 2022, text: 'Worked as a Full-Stack Support Developer in the company Clickspace, AL ,QC' , },
+
 ];

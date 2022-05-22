@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const Img = styled.img`
-  width:100%;
-  height:100%;
+ max-width:100%;
+  max-height:100%;
+  width:300px;
+  height:200px;
+  
   object-fit: cover;
   overflow: hidden;
 `
@@ -26,6 +29,8 @@ export const BlogCard = styled.div`
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
+  background-color: black;
+
   width: 400px;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
