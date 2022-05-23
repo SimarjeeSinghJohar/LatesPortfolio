@@ -9,7 +9,7 @@ const Hero = (props) => (
   <LeftSection>
     <SectionTitle  main center >
       Welcome to Simarjeet's Portfolio<br />
-      Made using React an Next.js
+      Made using React and Next.js
     </SectionTitle>
     <SectionTitle>Professional Summary</SectionTitle>
     <SectionText>

@@ -13,7 +13,7 @@ const Experience = () => (
       <ListItem>
         <ListContainer>
           <ListTitle>
-            ClickSpace Inc. Al, QC -
+            ClickSpace Inc. Calgary, AB -
             Support Full-Stack Developer
           </ListTitle>
           January 2022- February 2022
