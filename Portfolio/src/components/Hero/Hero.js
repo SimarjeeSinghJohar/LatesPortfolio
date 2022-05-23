@@ -7,7 +7,7 @@ import { LeftSection, section } from './HeroStyles';
 const Hero = (props) => (
 <Section row nopadding>
   <LeftSection>
-    <SectionTitle  main center>
+    <SectionTitle  main center >
       Welcome to Simarjeet's Portfolio<br />
       Made usign React an Next.js
     </SectionTitle>

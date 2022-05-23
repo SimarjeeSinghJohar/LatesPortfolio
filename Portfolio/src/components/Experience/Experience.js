@@ -15,7 +15,6 @@ const Experience = () => (
           <ListTitle>
             ClickSpace Inc. Al, QC -
             Support Full-Stack Developer
-
           </ListTitle>
           January 2022- February 2022
           <br />

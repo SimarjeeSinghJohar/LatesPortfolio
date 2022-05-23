@@ -6,6 +6,7 @@ import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './Techn
 const Technologies = () =>  (
 <Section id='tech'>
   <SectionDivider />
+
   <SectionTitle>
     Technologies
   </SectionTitle>
@@ -15,7 +16,7 @@ const Technologies = () =>  (
   </SectionText>
   <List>
     <ListItem>
-      <DiReact size="3rem" />
+      <DiReact size="3rem" color='yellow'/>
       <ListContainer>
         <ListTitle>
           Front-End
@@ -26,7 +27,7 @@ const Technologies = () =>  (
       </ListContainer>
     </ListItem>
     <ListItem>
-      <DiJava  size="3rem" />
+      <DiJava  size="3rem" color='yellow'/>
       <ListContainer>
         <ListTitle>
           Back-End
@@ -37,7 +38,7 @@ const Technologies = () =>  (
     </ListItem>
 
     <ListItem>
-      <DiGithub size="3rem" />
+      <DiGithub size="3rem" color='yellow'/>
       <ListContainer>
         <ListTitle>Version Control</ListTitle>
         <ListParagraph>
@@ -46,7 +47,7 @@ const Technologies = () =>  (
     </ListItem>
 
     <ListItem>
-      <DiAtlassian size="3rem" />
+      <DiAtlassian size="3rem" color='yellow'/>
       <ListContainer>
         <ListTitle>Tools</ListTitle>
         <ListParagraph>
@@ -56,7 +57,7 @@ const Technologies = () =>  (
 
 
     <ListItem>
-      <DiDatabase size="3rem" />
+      <DiDatabase size="3rem" color='yellow'/>
       <ListContainer>
         <ListTitle>Databases</ListTitle>
         <ListParagraph>
@@ -65,7 +66,7 @@ const Technologies = () =>  (
     </ListItem>
 
     <ListItem>
-      <DiVisualstudio size="3rem" />
+      <DiVisualstudio size="3rem" color='yellow'/>
       <ListContainer>
         <ListTitle>IDE</ListTitle>
         <ListParagraph>

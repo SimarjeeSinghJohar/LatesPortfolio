@@ -101,7 +101,7 @@ export const ListItem = styled.li`
   max-width: 320px;
   display: flex;
   flex-direction: column;
-  background-color: #469A49;
+  background-color: #5A5560;
   padding: 5px;
   border-radius: 20px;
 

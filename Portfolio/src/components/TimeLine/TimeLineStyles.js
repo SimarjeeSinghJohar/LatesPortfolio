@@ -42,16 +42,16 @@ export const CarouselMobileScrollNode = styled.div`
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
     min-width: ${({ final }) => final ? `120%;` : `min-content`}
-    background-color: transparent;
 
   }
 `
 
 export const CarouselItem = styled.div`
   background: #0F1624;
-  border-radius: 3px;
+  border-radius: 4px;
   max-width: 196px;
-  background-color: transparent;
+  background-color: #2D5F5D;
+  padding:2px;
 
   @media ${props => props.theme.breakpoints.md} {
     max-width: 124px;
