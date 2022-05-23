@@ -17,8 +17,6 @@ const Experience = () => (
             Support Full-Stack Developer
           </ListTitle>
           January 2022- February 2022
-          <br />
-
           <ListParagraph>
             <ul>
               <li> - Member of Support Development and Maintenance Team for application development.</li>
@@ -30,6 +28,7 @@ const Experience = () => (
           </ListParagraph>
         </ListContainer>
       </ListItem>
+      <br />
 
       <ListItem>
         <ListContainer>
@@ -38,7 +37,6 @@ const Experience = () => (
             Web Developer/IT
           </ListTitle>
           October 2021 - January 2021
-          <br />
 
           <ListParagraph>
             <ul>
@@ -50,6 +48,8 @@ const Experience = () => (
           </ListParagraph>
         </ListContainer>
       </ListItem>
+      <br />
+
 
 
       <ListItem>
@@ -60,7 +60,6 @@ const Experience = () => (
 
           </ListTitle>
           July 2019 - Oct 2019
-          <br />
 
           <ListParagraph>
             <ul>
@@ -71,6 +70,8 @@ const Experience = () => (
           </ListParagraph>
         </ListContainer>
       </ListItem>
+      <br />
+
 
       <ListItem>
         <ListContainer>
@@ -79,8 +80,6 @@ const Experience = () => (
             Front-End Developer
           </ListTitle>
           August 2018 – May 2019  
-          <br />
-
           <ListParagraph>
             <ul>
               <li> - Worked as a part of the Website Development Operations team. </li>

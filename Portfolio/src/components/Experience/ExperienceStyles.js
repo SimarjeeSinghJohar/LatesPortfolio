@@ -102,7 +102,7 @@ export const ListParagraph = styled.p`
 export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
-  background-color: #9B786F;
+  color: #9B786F;
   border-radius: 10px;
   padding: 5px;
   margin:5px;
