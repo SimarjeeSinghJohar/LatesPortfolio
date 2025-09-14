@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Section, SectionText, SectionTitle, B } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection, section } from './HeroStyles';
 
@@ -8,12 +8,11 @@ const Hero = (props) => (
 <Section row nopadding>
   <LeftSection>
     <SectionTitle  main center >
-      Welcome to Simarjeet's Portfolio<br />
-      Made using React and Next.js
+      Welcome to my Brain wired using React.js, Next.js and Express.js
     </SectionTitle>
-    <SectionTitle>Professional Summary</SectionTitle>
+    <SectionTitle>Professional Agenda</SectionTitle>
     <SectionText>
-    An experienced professional and dedicated individual with more than 1.5 years of experience in Retail domain, particularly in React.js, Flutter, Dart, HTML, CSS, JavaScript, Java/J2EE, C++, Node.JS, UI/UX , SQL and NoSQL DBMS. Ability to prioritize multiple tasks with strong communications skills. Skilled in using relational databases such as MySQL and PostgreSQL to simplify complex data models and NoSQL databases such as MongoDB. Excellent communication, analytical, problem solving and documentation skills along with code review .    </SectionText>
+     <B sub> Software Developer </B> with <B sub> 4+ years </B> of experience delivering <B sub>high-performance, scalable solutions</B> in retail technology. Recognized for <B sub>reducing operational costs by 40%, cutting bugs by 25%, improving API and site performance by 15%</B>. Expert in <B sub >Node.js/TypeScript, Azure Cloud, microservices</B> and both <B sub >SQL and NoSQL databases</B>. Adept at independently <B sub>architecting, developing, and optimizing full-stack applications</B> while ensuring alignment with business objectives.    </SectionText>
     <Button onClick={()=> window.location = "https://www.linkedin.com/in/simarjeet-singh-johar"}>Learn More</Button>
     </LeftSection>
 </Section>
