@@ -1,0 +1,25 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+
+# Build output
+dist/
+build/
+out/
+
+# Environment files
+.env
+*.env.local
+
+# Logs
+*.log
+logs/
+
+# OS / macOS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp

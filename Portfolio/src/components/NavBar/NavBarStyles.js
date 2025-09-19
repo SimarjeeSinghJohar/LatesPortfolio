@@ -2,117 +2,110 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
 
 export const Container = styled.div`
- display: grid;
-  grid-template-columns: 1fr auto 1fr; 
-  grid-template-rows: auto auto; /* top row + Div2 row */
-  align-items: center;
-  padding: 1rem 2rem;
+  display: grid;
+  height: 40px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  flex-direction: row;
+  padding: 1rem;
   width: 100%;
-  opacity: 0.95;
-  background: #0f1624;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(5px);
+  background: url(./images/vecteezy_galaxy-space-abstract-background-with-star-and-comet-shapes_8029888.svg) no-repeat top right;
+  background-size: cover;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999.5;    /* stay above other content */
   border-bottom: 1px solid black;
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.5rem 0.5rem; /* adjust padding on small screens */
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 60px);
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    
   }
 `;
 
 
 export const Span = styled.span`
-font-size: 3.5rem;
+  font-size : 2.5rem;
   font-weight: 700;
-  color: #13acc7ca;
+  line-height: 32px;
+  color: #c5dadaf2;
   padding: 1rem;
-
+  &:hover {
+    color: #fff;
+    opacity: 1;
+    cursor: pointer;
+  }
   @media ${(props) => props.theme.breakpoints.sm} {
+    font-size : 1.5rem;
+    line-height: 24px;
     padding: 0.5rem;
   }
+  
+
 `;
 
 export const Div1 = styled.div`
-grid-column: 1;
-  grid-row: 1;
+  grid-area: 1 / 1 / 2 / 3;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-
-  & > * {
-    flex-shrink: 0;
-  }
-
+  flex-direction: row;
+  align-content: center;
   @media ${(props) => props.theme.breakpoints.sm} {
-    gap: 0.5rem; /* slightly smaller spacing on mobile */
+    grid-area: 1 / 1 / 2 / 4;
   }
 `;
 
 export const LIST = styled.li`
-width: 100%;
+  width: 100%;
 
 @media ${(props) => props.theme.breakpoints.sm} {
-padding-top: 1rem;
-}
+    grid-area: 2 / 2 / 3 / 6;
+    width: max-content
+  }
 
 `;
 
 export const Div2 = styled.div`
-  grid-column: 1 / -1; /* full width */
-  grid-row: 2;
+  grid-area: 1 / 2 / 2 / 4;
   display: flex;
-  justify-content: space-around; 
-  align-items: center;
-  margin-top: 2rem;
-  color: #fe7e6d;
-  gap: 1rem;
-
-  & > * {
-    flex: 1;
-    text-align: center;
-  }
-
+  color: #FE7E6D;
+  flex-direction: row;
+  justify-content: space-around;
   @media ${(props) => props.theme.breakpoints.sm} {
-    margin-top: 1.5rem;
-    gap: 0.5rem;
+    grid-area: 2 / 2 / 3 / 6;
+    width: max-content;
+    position: relative ;
   }
 `;
-
 export const Div3 = styled.div`
-  grid-column: 3;
-  grid-row: 1;
+  grid-area: 1 / 5 / 2 / 6;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
-
   @media ${(props) => props.theme.breakpoints.sm} {
-    gap: 0.5rem; /* slightly smaller spacing on mobile */
-  }
+    align-items: center;
+    grid-area: 1 / 4 / 2 / 6;
+]  }
 `;
 
 // Navigation Links
 export const NavLink = styled.a`
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 100%;
+  position: relative;
   line-height: 32px;
-  color: #f1e212ff;
+  color: #FE7E6D;
   transition: 0.4s ease;
-  position: ;
-  padding: 1rem;
-
   &:hover {
-    color: #24d3cdd4;
+    color: #fff;
     opacity: 1;
     cursor: pointer;
   }
-
+  padding: 0.5rem;
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 1.5rem;
-    padding: 0.3rem;
+  padding: 0.3rem;
   }
 `;
 

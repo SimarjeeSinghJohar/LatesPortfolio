@@ -1,29 +1,30 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const Section = styled.section`
-  display: ${(props) => props.grid ? "grid" : "flex" };
-  flex-direction: ${(props) => props.row ? "row" : "column" };
-  padding: ${(props) => props.nopadding ? "0" : "32px 48px 0" } ;
+  display: ${(props) => (props.grid ? 'grid' : 'flex')};
+  flex-direction: ${(props) => (props.row ? 'row' : 'column')};
+  padding: ${(props) => (props.nopadding ? '0' : '32px 24px 0')};
   margin: 0 auto;
-  max-width: 1040px;
-  width: calc(100vw - 32px);
-
-  box-sizing: content-box;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  grid-template-columns: 1fr 1fr;
+  gap: ${(props) => (props.grid ? '24px' : '0')};
+
+  ${(props) =>
+    props.grid &&
+    `
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  `}
 
   @media ${(props) => props.theme.breakpoints.md} {
-    padding: 24px 48px 0;
+    padding: ${(props) => (props.nopadding ? '0' : '24px')};
     flex-direction: column;
-    width: calc(100vw - 32px);
-
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: ${(props) => props.nopadding ? "0" : "16px 16px 0" } ;
-    width: calc(100vw - 32px);
-    flex-direction: column;
+    padding: ${(props) => (props.nopadding ? '0' : '16px')};
   }
 `
 
@@ -285,5 +286,27 @@ export const LinkIconImg = styled.div`
 export const B = styled.b`
   font-weight: ${(props) => props.sub ? 600 : 800};
   color: #13acc7a9;
-  `
+`
+
+const slideIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+`
+
+export const AnimatedKeyword = styled.span`
+  font-weight: bold;
+  color: #13adc7;
+animation: ${slideIn} 1s ease-out forwards;
+animation-delay: ${({ delay }) => delay}s`
   

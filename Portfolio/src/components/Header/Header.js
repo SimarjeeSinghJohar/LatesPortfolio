@@ -3,36 +3,36 @@ import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
 
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span } from './HeaderStyles';
+import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, LIST } from './HeaderStyles';
 
 const Header = () => (
   <Container>
     <Div1>
-      <Link href="/" style={{ display: "flex", alignItems: "center", color: "white", marginBottom: "20px" }}>
-        <DiCssdeck size="4rem" color="#FAED26" /> <Span>My Portfolio</Span>
+      <Link href="/" style={{ display: "flex", alignItems: "center", color: "white", marginBottom: "10px" }}>
+        <DiCssdeck size="5rem" color="#FAED26" /> <Span>My Portfolio</Span>
       </Link>
     </Div1>
     <Div2>
-      <li>
+      <LIST>
         <Link href="#tech">
-          <NavLink>Technologies</NavLink>
+          <NavLink>TECHONOLOGIES</NavLink>
         </Link>
-      </li>
-      <li>
+      </LIST>
+      <LIST>
         <Link href="#exp">
-          <NavLink>Experience</NavLink>
+          <NavLink>EXPERIENCE</NavLink>
         </Link>
-      </li>
-      <li>
+      </LIST>
+      <LIST>
         <Link href="#projects">
-          <NavLink>Projects</NavLink>
+          <NavLink>PROJECTS</NavLink>
         </Link>
-      </li>
-      <li>
+      </LIST>
+      <LIST>
         <Link href="#about">
-          <NavLink>About</NavLink>
+          <NavLink>ABOUT</NavLink>
         </Link>
-      </li>
+      </LIST>
     </Div2>
     <Div3>
       <SocialIcons href="https://github.com/">

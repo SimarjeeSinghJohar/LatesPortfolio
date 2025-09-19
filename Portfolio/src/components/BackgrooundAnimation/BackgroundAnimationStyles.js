@@ -8,7 +8,7 @@ export const DIV = styled.div`
   left: 0;
   z-index: -1;
   overflow: hidden;
-  background-color: #e3616101;
+  background-color: #b11a1a03;
 
 `;
 
