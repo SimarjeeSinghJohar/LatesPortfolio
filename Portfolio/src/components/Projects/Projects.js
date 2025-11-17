@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
+import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img, ProjectSection } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 
@@ -12,8 +12,9 @@ const projectsDemonstartion = [
 ];
 
 const Projects = () => (
-  <Section nopadding id='projects'>
-    <SectionDivider />
+  <Section nopadding id='projects' style={{ zIndex: 600, position: 'relative' }}>
+    <ProjectSection>
+      <SectionDivider />
       <SectionTitle main>Projects</SectionTitle>
         {projects.map((project) => (
           <BlogCard key={project.id}>
@@ -41,6 +42,7 @@ const Projects = () => (
           </BlogCard>
           
         ))}
+    </ProjectSection>
   </Section>
 );
 

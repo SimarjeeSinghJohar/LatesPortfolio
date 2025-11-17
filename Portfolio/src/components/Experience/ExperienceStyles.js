@@ -136,3 +136,16 @@ export const ListIcon = styled.img`
     margin-bottom: 0px;
   }
 `
+
+export const ExpSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 60px 40px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(26, 15, 15, 0.1);
+  position: relative;
+  z-index: 600;
+  isolation: isolate;
+`;

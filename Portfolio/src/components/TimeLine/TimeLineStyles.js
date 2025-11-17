@@ -2,42 +2,50 @@
 import styled from 'styled-components'
 
 export const CarouselContainer = styled.ul`
-  max-width: 1040px;
-  background: #0F1624;
-  padding: 0rem;
-  list-style:none;
-  display: flex;
-  justify-content: space-between; 
-  /* overflow-x: hidden; */
-  background-color: transparent;
+  width: 100%; /* make full width for consistency */
+  max-width: 100vw; /* prevent overflow on large screens */
+  margin: 0 0 80px 0;
+  padding: 0;
+  list-style: none;
 
-  margin-left: 32px;
-  &:first-of-type{
-    margin-left: 0px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 25px;
+
+  /* horizontal scroll */
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  touch-action: pan-x;
+  position: relative;
+  z-index: 600;
+
+  /* hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  &::-webkit-scrollbar {
+    display: none;
   }
 
-  margin-bottom: 80px;
+  /* child items */
+  & > li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
 
-  //remove scrollbar
-  scrollbar-width: none;  
-   &::-webkit-scrollbar {
-     display: none;
-   }
-
-  @media ${props => props.theme.breakpoints.sm} {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    touch-action: pan-x;
-    justify-content: initial;
+  @media ${(props) => props.theme.breakpoints.sm} {
     margin-bottom: 8px;
   }
 `
 export const CarouselMobileScrollNode = styled.div`
 
-    background-color: #;
-    width:165px;
+    background-color: #210c0c05;
+    width: 120px;
     padding: 2px;
+  
 
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
@@ -47,12 +55,21 @@ export const CarouselMobileScrollNode = styled.div`
 `
 
 export const CarouselItem = styled.div`
-  background: #0F1624;
-  border-radius: 4px;
-  max-width: 196px;
-  background-color: #2D5F5D;
-  padding:2px;
+ margin-left: ;
+    min-width: 120px;
+    background: #0E131F;
+    padding: 4px;
+    align-content: start;
+    scroll-snap-align: start;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    height: fit-content;
+    background-color: transparent;
 
+    
+    ${(props) => props.active === props.index ? `opacity: 1` : `opacity: 0.5`}; 
+  }
   @media ${props => props.theme.breakpoints.md} {
     max-width: 124px;
     background-color: transparent;
@@ -79,8 +96,8 @@ export const CarouselItem = styled.div`
 
 export const CarouselItemTitle = styled.h4`
   font-weight: bold;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 25px;
   letter-spacing: 0.02em;
   display: flex;
   /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
@@ -131,27 +148,27 @@ export const CarouselItemText = styled.p`
   }
 `
 export const CarouselButtons = styled.div`
-  width: 288px;
-
-  display: none;
-  visibility: hidden;
-
-  @media ${props => props.theme.breakpoints.sm} {
-    display: flex;
-    visibility: visible;
-    margin-bottom: 48px;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 48px;
 `
 
 export const CarouselButton = styled.button`
   box-sizing: border-box;
   background: none;
-  padding: 4px;
+  padding: 8px;
   border: none;
   cursor: pointer;
-  margin-right: 4px;
+  margin: 0 6px;
   opacity: ${(props) => props.active === props.index ? `1` : `.33`};
   transform: ${(props) => props.active === props.index ? `scale(1.6)` : `scale(1)`};
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   &:focus {
     outline: none;
@@ -160,11 +177,24 @@ export const CarouselButton = styled.button`
 
 export const CarouselButtonDot = styled.div`
   background-color: white;
-  border-radius: 10px;
+  border-radius: 50%;
   margin: auto;
-  width: 3px;
-  height: 3px;
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
 `
 
 
 
+export const AboutSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 60px 40px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(26, 15, 15, 0.1);
+  position: relative;
+  z-index: 600;
+  isolation: isolate;
+`;

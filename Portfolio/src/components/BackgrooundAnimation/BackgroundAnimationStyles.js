@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const DIV = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 30%;
+  height: 30%;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 20px;
+  right: 20px;
   z-index: -1;
-  overflow: hidden;
-  background-color: #b11a1a03;
+  background-color: #0606060b;
+  pointer-events: none;
 
 `;
 

@@ -1,15 +1,16 @@
 import React from 'react';
 import { DiAtlassian, DiDatabase, DiFirebase, DiGithub, DiJava, DiReact, DiVisualstudio } from 'react-icons/di';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
+import { List, ListContainer, ListItem, ListParagraph, ListTitle, TechSection } from './TechnologiesStyles';
 
 const Technologies = () =>  (
-<Section id='tech'>
-  <SectionDivider />
+<Section id='tech' style={{ zIndex: 600, position: 'relative' }}>
+  <TechSection>
+    <SectionDivider />
 
-  <SectionTitle>
-    Technologies
-  </SectionTitle>
+    <SectionTitle>
+      Technologies
+    </SectionTitle>
   <SectionText>
     I have worked on range of technologies in in web development world. 
     From Back-end to Design.
@@ -74,6 +75,7 @@ const Technologies = () =>  (
       </ListContainer>
     </ListItem>
   </List>
+  </TechSection>
 </Section>
 );
 

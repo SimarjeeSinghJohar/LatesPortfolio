@@ -1,13 +1,14 @@
 import React from 'react';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './ExperienceStyles';
+import { List, ListContainer, ListItem, ListParagraph, ListTitle, ExpSection } from './ExperienceStyles';
 
 const Experience = () => (
-  <Section id='exp'>
-    <SectionDivider />
-    <SectionTitle>
-      Experience
-    </SectionTitle>
+  <Section id='exp' style={{ zIndex: 600, position: 'relative' }}>
+    <ExpSection>
+      <SectionDivider />
+      <SectionTitle>
+        Experience
+      </SectionTitle>
     <List>
 
       <ListItem>
@@ -90,6 +91,7 @@ const Experience = () => (
         </ListContainer>
       </ListItem>
     </List>
+    </ExpSection>
   </Section>
 );
 

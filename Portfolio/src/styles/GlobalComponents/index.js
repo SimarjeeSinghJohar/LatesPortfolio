@@ -5,26 +5,22 @@ export const Section = styled.section`
   flex-direction: ${(props) => (props.row ? 'row' : 'column')};
   padding: ${(props) => (props.nopadding ? '0' : '32px 24px 0')};
   margin: 0 auto;
-  width: 100%;
-  max-width: 100%;
+  width: 80%;
+  max-width: 1024px;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
-  gap: ${(props) => (props.grid ? '24px' : '0')};
+  overflow: ${(props) => (props.grid ? 'visible' : 'hidden')};
+  z-index: 1;
 
-  ${(props) =>
-    props.grid &&
-    `
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  `}
 
   @media ${(props) => props.theme.breakpoints.md} {
     padding: ${(props) => (props.nopadding ? '0' : '24px')};
-    flex-direction: column;
+    width: 100%;
   }
 
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: ${(props) => (props.nopadding ? '0' : '16px')};
+    @media ${(props) => props.theme.breakpoints.sn} {
+    padding: ${(props) => (props.nopadding ? '0' : '24px')};
+    width: 80%;
   }
 `
 
@@ -32,30 +28,23 @@ export const SectionTitle = styled.h2`
   font-weight: ${(props) => props.main ? '700' : '500'};
   font-size: ${(props) => props.main ? '35px' : '25px'};
   line-height: ${(props) => props.main ? '30px' : '30px'};
-  width: max-content;
-  max-width: 100%;
+  width:100%;
   background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
   padding: ${(props) => props.main ? '0px 0 15px' : '0'};
 
-  @media ${props => props.theme.breakpoints.md}{
-    font-size: ${(props) => props.main ? '56px' : '48px'};
-    line-height: ${(props) => props.main ? '56px' : '48px'};
-    margin-bottom: 12px;
-    padding: ${(props) => props.main ? '40px 0 12px' : '0'};
-  }
 
-  @media ${props => props.theme.breakpoints.sm}{
-    font-size: 32px;
-    line-height: 40px;
-    font-size: ${(props) => props.main ? '28px' : '32px'};
-    line-height: ${(props) => props.main ? '32px' : '40px'};
+  @media ${props => props.theme.breakpoints.sn}{
+    font-size: ${(props) => props.main ? '28px' : '30px'};
+    line-height: ${(props) => props.main ? '25px' : '35px'};
     margin-bottom: 8px;
     padding: ${(props) => props.main ? '16px 0 8px' : '0'};
-    max-width: 100%;
+    max-width: 80%;
   }
+
+
 `
 
 export const SectionText = styled.p`
@@ -283,15 +272,11 @@ export const LinkIconImg = styled.div`
     height: ${({ large }) => large ? '32px' : '16px'};
   }
 `
-export const B = styled.b`
-  font-weight: ${(props) => props.sub ? 600 : 800};
-  color: #13acc7a9;
-`
 
 const slideIn = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(px) scale(0.9);
+    transform: translateY(20px) scale(0.9);
   }
   60% {
     opacity: 1;
@@ -301,12 +286,34 @@ const slideIn = keyframes`
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
+`;
+
+export const B = styled.b`
+  font-weight: ${(props) => props.sub ? 600 : 800};
+  color: #13acc7a9;
+  animation: ${slideIn} 0.6s forwards;
+  animation-delay: ${({ delay }) => delay || '0s'};
+  opacity: 0;
 `
 
+
+
+const pulse = keyframes`
+  0% { transform: scale(1); color: #b1631aff; }
+  30% { transform: scale(1.1); color: #1ab1b1; }
+  100% { transform: scale(1); color: #b11a1a; }
+`;
+
 export const AnimatedKeyword = styled.span`
+  display: inline-block;
+  animation: ${pulse} 1.2s infinite;
+  animation-delay: ${({ delay }) => delay || '0s'}, 0s;
+  opacity: 0;
   font-weight: bold;
-  color: #13adc7;
-animation: ${slideIn} 1s ease-out forwards;
-animation-delay: ${({ delay }) => delay}s`
+  transition: color 0.5s;
+  ${props => props.sub && `
+    animation-duration: 1.2s, 4s;
+    color: #1ab1b1;
+  `}
+`
   

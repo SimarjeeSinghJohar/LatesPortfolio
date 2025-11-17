@@ -27,5 +27,7 @@ export const TimeLineData = [
   { year: 2020, text: 'Business and Information System Architecture – Post Graduate Certificate,Fanshawe College, London South Campus', },
   { year: 2021, text: 'Towards the end of the year started working as a Web-Developer in a company Horizon Quest, ON', },
   { year: 2022, text: 'Worked as a Full-Stack Support Developer in the company Clickspace, AL ,QC' , },
+  { year: 2022, text: 'Worked as a Full-Stack Support Developer in the company Clickspace, AL ,QC' , },
+
 
 ];
