@@ -14,19 +14,27 @@ const Hero = (props) => {
     <Section row nopadding style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', padding: '60px 24px', marginTop: '50px' }}>
       <LeftSection>
         <HeroTitle>
-          Simarjeet Singh Johar
+          Hi, I'm Simarjeet Singh Johar
         </HeroTitle>
         <SectionDivider />
         <HeroSubtitle>
-          <strong>Software Developer | Software Engineer | Full-Stack & Cloud Specialist</strong>
+          <strong>Full-Stack Engineer | Cloud Solutions Architect | Performance Optimizer</strong>
           <br /><br />
-          Software developer with expertise in full-stack and cloud development, specializing in retail technology. 
-          Reduced operational costs by <strong>40%</strong> and cut bugs by <strong>25%</strong> through process improvements and automation. 
-          Improved site performance by <strong>15%</strong> by streamlining checkout and cart flows, saving <strong>7,000 user hours annually</strong>. 
-          Promoted from Backend Developer to Software Developer in 18 months.
+          I craft scalable digital experiences that drive real business impact. From architecting cloud solutions 
+          that <strong>slash operational costs by 40%</strong> to engineering performance optimizations that 
+          <strong>save 7,000+ user hours annually</strong>, I transform complex challenges into elegant solutions.
+          <br /><br />
+          Specializing in <strong>Next.js</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>AWS</strong>, 
+          I build modern web applications that are fast, reliable, and user-centric. 
+          Promoted from Backend Developer to Software Developer in just 18 months for consistently delivering 
+          exceptional results.
+          <br /><br />
+          <span style={{ color: '#00E6FF', fontSize: '1.1rem' }}>
+            Let's build something amazing together. 🚀
+          </span>
         </HeroSubtitle>
         <HeroButton onClick={handleLearnMore}>
-          View LinkedIn Profile
+          Connect on LinkedIn →
         </HeroButton>
       </LeftSection>
     </Section>
