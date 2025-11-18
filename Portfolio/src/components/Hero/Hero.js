@@ -11,22 +11,31 @@ const Hero = (props) => {
   };
 
   return (
-    <Section row nopadding style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', padding: '60px 24px', marginTop: '50px' }}>
+    <Section row nopadding style={{ minHeight: '35vh', display: 'flex', alignItems: 'center', padding: '25px 24px', marginTop: '20px' }}>
       <LeftSection>
         <HeroTitle>
-          Simarjeet Singh Johar
+          Building Digital Excellence - Weaving Softwares, Websites Connections,<br />
+          One Line of Code at a Time
         </HeroTitle>
         <SectionDivider />
         <HeroSubtitle>
-          <strong>Software Developer | Software Engineer | Full-Stack & Cloud Specialist</strong>
+          <strong>Hi, I'm Simarjeet Singh Johar - Full-Stack Developer | Cloud Solutions Engineer | Problem Solver</strong>
           <br /><br />
-          Software developer with expertise in full-stack and cloud development, specializing in retail technology. 
-          Reduced operational costs by <strong>40%</strong> and cut bugs by <strong>25%</strong> through process improvements and automation. 
-          Improved site performance by <strong>15%</strong> by streamlining checkout and cart flows, saving <strong>7,000 user hours annually</strong>. 
-          Promoted from Backend Developer to Software Developer in 18 months.
+          I turn ideas into powerful digital solutions. Whether it's building lightning-fast web applications, 
+          architecting cloud infrastructure, or optimizing systems for peak performance, I thrive on creating 
+          technology that makes a difference.
+          <br /><br />
+          With expertise in <strong>Next.js</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>cloud platforms</strong>, 
+          I've delivered solutions that <strong>cut operational costs by 40%</strong>, <strong>reduced bugs by 25%</strong>, 
+          and <strong>improved performance by 15%</strong>, saving thousands of user hours and enhancing experiences 
+          for millions of customers.
+          <br /><br />
+          <span style={{ color: '#00E6FF', fontSize: '1.1rem' }}>
+            Ready to bring your next project to life? Let's connect.
+          </span>
         </HeroSubtitle>
         <HeroButton onClick={handleLearnMore}>
-          View LinkedIn Profile
+          View My Work →
         </HeroButton>
       </LeftSection>
     </Section>

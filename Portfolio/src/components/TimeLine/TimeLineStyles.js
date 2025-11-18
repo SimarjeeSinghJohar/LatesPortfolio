@@ -22,8 +22,8 @@ const activeGlow = keyframes`
 export const CarouselContainer = styled.ul`
   width: 100%;
   max-width: 100%;
-  margin: 0 0 60px 0;
-  padding: 50px 20px;
+  margin: 0 0 40px 0;
+  padding: 35px 20px;
   list-style: none;
 
   display: flex;
@@ -55,13 +55,14 @@ export const CarouselContainer = styled.ul`
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
-    padding: 45px 18px;
+    padding: 30px 18px;
     gap: 25px;
+    margin-bottom: 30px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    margin-bottom: 8px;
-    padding: 40px 15px;
+    margin-bottom: 20px;
+    padding: 28px 15px;
     gap: 20px;
   }
 `
@@ -295,8 +296,8 @@ export const CarouselButtons = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 16px;
-  margin-bottom: 48px;
+  margin-top: 12px;
+  margin-bottom: 32px;
 `
 
 export const CarouselButton = styled.button`
@@ -351,7 +352,7 @@ export const CarouselButtonDot = styled.div`
 export const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 30px;
   margin: 0 auto;
   width: 90%;
   max-width: 1200px;
@@ -380,7 +381,7 @@ export const AboutSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.lg}{
-    padding: 50px 35px;
+    padding: 28px 30px;
     width: 92%;
     border-radius: 18px;
 
@@ -390,7 +391,7 @@ export const AboutSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.md}{
-    padding: 40px 30px;
+    padding: 26px 28px;
     width: 94%;
     border-radius: 16px;
 
@@ -400,7 +401,7 @@ export const AboutSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.sm}{
-    padding: 30px 20px;
+    padding: 24px 20px;
     width: 95%;
     border-radius: 12px;
 

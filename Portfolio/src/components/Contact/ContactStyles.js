@@ -37,7 +37,7 @@ const ripple = keyframes`
 export const ContactSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 40px 40px;
+  padding: 30px 30px;
   margin: 0 auto;
   width: 90%;
   max-width: 1200px;
@@ -73,17 +73,17 @@ export const ContactSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.lg}{
-    padding: 50px 35px;
+    padding: 28px 30px;
     width: 92%;
   }
 
   @media ${props => props.theme.breakpoints.md}{
-    padding: 40px 30px;
+    padding: 26px 28px;
     width: 94%;
   }
 
   @media ${props => props.theme.breakpoints.sm}{
-    padding: 30px 20px;
+    padding: 24px 20px;
     width: 95%;
   }
 `;

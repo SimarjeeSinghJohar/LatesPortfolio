@@ -23,8 +23,8 @@ export const ImageContainer = styled.div`
   text-align: center;
   background: radial-gradient(ellipse at center, rgba(138, 43, 226, 0.2) 0%, transparent 70%);
   width: 100%;
-  padding: 40px;
-  margin-top: 32px;
+  padding: 30px;
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,27 +83,27 @@ export const List = styled.ul`
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin: 3rem 0;
+  gap: 30px;
+  margin: 2rem 0;
   transition: all 0.3s ease;
   
   @media ${props => props.theme.breakpoints.lg}{
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin: 2.5rem 0;
+    gap: 28px;
+    margin: 1.8rem 0;
   }
 
   @media ${props => props.theme.breakpoints.md}{
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
   }
   
   @media ${props => props.theme.breakpoints.sm}{
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin: 1.5rem 0;
+    gap: 14px;
+    margin: 1.2rem 0;
   }
 `
 
@@ -300,7 +300,7 @@ export const ListIcon = styled.img`
 export const TechSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 30px;
   margin: 0 auto;
   width: 90%;
   max-width: 1200px;
@@ -329,7 +329,7 @@ export const TechSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.lg}{
-    padding: 50px 35px;
+    padding: 28px 30px;
     width: 92%;
     border-radius: 18px;
 
@@ -339,7 +339,7 @@ export const TechSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.md}{
-    padding: 40px 30px;
+    padding: 26px 28px;
     width: 94%;
     border-radius: 16px;
 
@@ -349,7 +349,7 @@ export const TechSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.sm}{
-    padding: 30px 20px;
+    padding: 24px 20px;
     width: 95%;
     border-radius: 12px;
 
@@ -392,26 +392,26 @@ const countUp = keyframes`
 export const SkillsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin: 60px 0 80px;
+  gap: 28px;
+  margin: 40px 0 50px;
   width: 100%;
 
   @media ${props => props.theme.breakpoints.lg} {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-    margin: 50px 0 70px;
+    gap: 26px;
+    margin: 35px 0 45px;
   }
 
   @media ${props => props.theme.breakpoints.md} {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin: 40px 0 60px;
+    gap: 22px;
+    margin: 30px 0 40px;
   }
 
   @media ${props => props.theme.breakpoints.sm} {
     grid-template-columns: 1fr;
-    gap: 20px;
-    margin: 30px 0 50px;
+    gap: 18px;
+    margin: 25px 0 35px;
   }
 `;
 
