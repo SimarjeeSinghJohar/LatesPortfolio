@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     const msg = {
-      to: 'connect@simarjeetsinghjohar.com', // Your email
+      to: process.env.SENDGRID_VERIFIED_SENDER, // Your email (where you receive messages)
       from: process.env.SENDGRID_VERIFIED_SENDER, // Must be verified in SendGrid
       replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
