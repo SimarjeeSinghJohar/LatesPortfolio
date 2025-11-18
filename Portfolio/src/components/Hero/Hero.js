@@ -14,7 +14,7 @@ const Hero = (props) => {
     <Section row nopadding style={{ minHeight: '35vh', display: 'flex', alignItems: 'center', padding: '25px 24px', marginTop: '20px' }}>
       <LeftSection>
         <HeroTitle>
-          Building Digital Excellence - Weaving Softwares, Websites Connections,<br />
+          Building Digital Excellence - Weaving Softwares, Websites & Connections,<br />
           One Line of Code at a Time
         </HeroTitle>
         <SectionDivider />
