@@ -75,72 +75,76 @@ export const LeftSection = styled.div`
 `;
 
 export const HeroTitle = styled.h1`
-  font-size: clamp(42px, 8vw, 72px);
+  font-size: clamp(28px, 5vw, 48px);
   font-weight: 900;
   line-height: 1.2;
   color: #fff;
-  background: linear-gradient(135deg, #FFFFFF 0%, #00E6FF 25%, #8A2BE2 50%, #FF1493 75%, #FFFFFF 100%);
-  background-size: 300% 300%;
+  background: linear-gradient(135deg, #FFFFFF 0%, #00E6FF 20%, #FFFFFF 40%, #8A2BE2 60%, #FFFFFF 80%, #00E6FF 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: ${gradientShift} 5s ease infinite, ${textFloat} 3s ease-in-out infinite;
-  margin-bottom: 24px;
+  animation: ${gradientShift} 6s ease infinite;
+  margin-bottom: 16px;
   position: relative;
   z-index: 1;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  letter-spacing: 2px;
+  letter-spacing: -0.5px;
+  filter: drop-shadow(0 0 25px rgba(0, 230, 255, 0.4)) drop-shadow(0 0 45px rgba(138, 43, 226, 0.25));
+  transition: all 0.4s ease;
   
   &:hover {
-    animation: ${gradientShift} 5s ease infinite, ${glitch} 0.5s ease-in-out;
+    filter: drop-shadow(0 0 35px rgba(0, 230, 255, 0.6)) drop-shadow(0 0 60px rgba(138, 43, 226, 0.4));
+    transform: translateY(-2px);
+    animation: ${gradientShift} 3s ease infinite;
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: clamp(36px, 7vw, 56px);
-    margin-bottom: 20px;
+    font-size: clamp(24px, 4.5vw, 40px);
+    margin-bottom: 14px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: clamp(28px, 6vw, 42px);
-    margin-bottom: 16px;
+    font-size: clamp(20px, 4vw, 32px);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
   }
 `;
 
 export const HeroSubtitle = styled.p`
-  font-size: clamp(18px, 3vw, 28px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 32px;
+  font-size: clamp(15px, 2.2vw, 20px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 24px;
   position: relative;
   z-index: 1;
-  animation: ${textFloat} 4s ease-in-out infinite;
-  animation-delay: 0.2s;
   font-weight: 400;
-  letter-spacing: 0.5px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.3px;
+  max-width: 850px;
 
   strong {
-    background: linear-gradient(90deg, #00E6FF 0%, #8A2BE2 50%, #00E6FF 100%);
+    background: linear-gradient(90deg, #00E6FF 0%, #FFFFFF 50%, #8A2BE2 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: ${gradientShift} 3s linear infinite;
+    animation: ${gradientShift} 4s linear infinite;
     font-weight: 700;
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: clamp(16px, 2.5vw, 24px);
-    margin-bottom: 28px;
+    font-size: clamp(14px, 2vw, 18px);
+    margin-bottom: 20px;
+    max-width: 700px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: clamp(14px, 2vw, 20px);
-    margin-bottom: 24px;
+    font-size: clamp(13px, 1.8vw, 16px);
+    margin-bottom: 18px;
+    max-width: 100%;
   }
 `;
 
 export const HeroButton = styled.button`
-  padding: 18px 48px;
-  font-size: 18px;
+  padding: 15px 42px;
+  font-size: 15px;
   font-weight: 700;
   color: #0E131F;
   background: linear-gradient(135deg, #00E6FF 0%, #00BFFF 100%);
@@ -150,7 +154,7 @@ export const HeroButton = styled.button`
   position: relative;
   z-index: 1;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 230, 255, 0.4);
+  box-shadow: 0 6px 28px rgba(0, 230, 255, 0.35);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -167,8 +171,8 @@ export const HeroButton = styled.button`
   }
 
   &:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 12px 48px rgba(0, 230, 255, 0.6), 0 0 40px rgba(138, 43, 226, 0.3);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 10px 42px rgba(0, 230, 255, 0.55), 0 0 35px rgba(138, 43, 226, 0.3);
 
     &:before {
       left: 100%;
@@ -176,17 +180,17 @@ export const HeroButton = styled.button`
   }
 
   &:active {
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-1px) scale(1.02);
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
-    padding: 16px 40px;
-    font-size: 16px;
+    padding: 14px 36px;
+    font-size: 14px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 14px 32px;
-    font-size: 14px;
+    padding: 13px 30px;
+    font-size: 13px;
     width: 100%;
   }
 `;

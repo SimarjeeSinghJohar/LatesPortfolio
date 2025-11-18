@@ -3,30 +3,30 @@ import styled from 'styled-components';
 export const GridContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  padding: 3rem;
+  padding: 2rem;
   place-items: center;
-  column-gap: 2rem;
-  row-gap: 3rem;
+  column-gap: 1.5rem;
+  row-gap: 2rem;
   transition: all 0.3s ease;
 
   @media ${(props) => props.theme.breakpoints.lg} {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    padding: 2.5rem;
-    column-gap: 1.75rem;
-    row-gap: 2.5rem;
+    padding: 1.8rem;
+    column-gap: 1.5rem;
+    row-gap: 1.8rem;
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    padding: 2rem;
-    column-gap: 1.5rem;
-    row-gap: 2rem;
+    padding: 1.5rem;
+    column-gap: 1.2rem;
+    row-gap: 1.5rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 1rem;
+    padding: 1.2rem 1rem;
     padding-bottom: 0;
   }
 `
@@ -310,7 +310,7 @@ export const Tag = styled.li`
 export const ProjectSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 30px;
   margin: 0 auto;
   width: 90%;
   max-width: 1200px;
@@ -339,7 +339,7 @@ export const ProjectSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.lg}{
-    padding: 50px 35px;
+    padding: 28px 30px;
     width: 92%;
     border-radius: 18px;
 
@@ -349,7 +349,7 @@ export const ProjectSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.md}{
-    padding: 40px 30px;
+    padding: 26px 28px;
     width: 94%;
     border-radius: 16px;
 
@@ -359,7 +359,7 @@ export const ProjectSection = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.sm}{
-    padding: 30px 20px;
+    padding: 24px 20px;
     width: 95%;
     border-radius: 12px;
 
