@@ -18,23 +18,23 @@ const Hero = (props) => {
         </HeroTitle>
         <SectionDivider />
         <HeroSubtitle>
-          <strong>Full-Stack Engineer | Cloud Solutions Architect | Performance Optimizer</strong>
+          <strong>Full-Stack Developer | Cloud Solutions Engineer | Problem Solver</strong>
           <br /><br />
-          I craft scalable digital experiences that drive real business impact. From architecting cloud solutions 
-          that <strong>slash operational costs by 40%</strong> to engineering performance optimizations that 
-          <strong>save 7,000+ user hours annually</strong>, I transform complex challenges into elegant solutions.
+          I turn ideas into powerful digital solutions. Whether it's building lightning-fast web applications, 
+          architecting cloud infrastructure, or optimizing systems for peak performance, I thrive on creating 
+          technology that makes a difference.
           <br /><br />
-          Specializing in <strong>Next.js</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>AWS</strong>, 
-          I build modern web applications that are fast, reliable, and user-centric. 
-          Promoted from Backend Developer to Software Developer in just 18 months for consistently delivering 
-          exceptional results.
+          With expertise in <strong>Next.js</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>cloud platforms</strong>, 
+          I've delivered solutions that <strong>cut operational costs by 40%</strong>, <strong>reduced bugs by 25%</strong>, 
+          and <strong>improved performance by 15%</strong> — saving thousands of user hours and enhancing experiences 
+          for millions of customers.
           <br /><br />
           <span style={{ color: '#00E6FF', fontSize: '1.1rem' }}>
-            Let's build something amazing together. 🚀
+            Ready to bring your next project to life? Let's connect.
           </span>
         </HeroSubtitle>
         <HeroButton onClick={handleLearnMore}>
-          Connect on LinkedIn →
+          View My Work →
         </HeroButton>
       </LeftSection>
     </Section>
