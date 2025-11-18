@@ -1,14 +1,15 @@
 import React from 'react';
+import {DIV} from './BackgroundAnimationStyles';
 
 const BackgroundAnimation = () => (
-  <div>
+  <DIV>
     <svg
       className="BgAnimation__svg"
       viewBox="0 0 602 602"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g opacity="0.15">
+      <g opacity="0.1">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -35,7 +36,7 @@ const BackgroundAnimation = () => (
         ry="1.07433"
         fill="#945DD6"
       >
-        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+        <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_2" />
         </animateMotion>
       </ellipse>
@@ -359,7 +360,7 @@ const BackgroundAnimation = () => (
         </linearGradient>
       </defs>
     </svg>
-  </div>
+  </DIV>
 );
 
 export default BackgroundAnimation;

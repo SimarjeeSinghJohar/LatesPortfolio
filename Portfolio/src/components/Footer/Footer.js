@@ -9,13 +9,12 @@ const Footer = () => {
   <FooterWrapper>
     <LinkList>
     <LinkColumn>
-    <LinkTitle>Call</LinkTitle>
-    <LinkItem href="tel:437-771-7032">437-771-7032</LinkItem>
+    <LinkTitle>EMAIL</LinkTitle>
+    <LinkItem href="mailto:simarjitjohar319@gmail.com">simarjitjohar319@gmail.com</LinkItem>
     </LinkColumn>
     <LinkColumn>
-    <LinkTitle>EMAIL</LinkTitle>
-    <LinkItem href="mailto:simar7965@gmail.com">simar7965@gmail.com</LinkItem>
-   
+    <LinkTitle>LINKEDIN</LinkTitle>
+    <LinkItem href="https://linkedin.com/in/simarjeet-singh-johar" target="_blank" rel="noopener noreferrer">linkedin.com/in/simarjeet-singh-johar</LinkItem>
     </LinkColumn>
     </LinkList>
   </FooterWrapper>

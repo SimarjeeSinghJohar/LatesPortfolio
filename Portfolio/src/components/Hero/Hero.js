@@ -1,22 +1,36 @@
 import React from 'react';
 
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection, section } from './HeroStyles';
+import { Section, SectionText, SectionDivider } from '../../styles/GlobalComponents';
+import { LeftSection, HeroTitle, HeroSubtitle, HeroButton } from './HeroStyles';
 
-const Hero = (props) => (
-<Section row nopadding>
-  <LeftSection>
-    <SectionTitle  main center >
-      Welcome to Simarjeet's Portfolio<br />
-      Made using React and Next.js
-    </SectionTitle>
-    <SectionTitle>Professional Summary</SectionTitle>
-    <SectionText>
-    An experienced professional and dedicated individual with more than 1.5 years of experience in Retail domain, particularly in React.js, Flutter, Dart, HTML, CSS, JavaScript, Java/J2EE, C++, Node.JS, UI/UX , SQL and NoSQL DBMS. Ability to prioritize multiple tasks with strong communications skills. Skilled in using relational databases such as MySQL and PostgreSQL to simplify complex data models and NoSQL databases such as MongoDB. Excellent communication, analytical, problem solving and documentation skills along with code review .    </SectionText>
-    <Button onClick={()=> window.location = "https://www.linkedin.com/in/simarjeet-singh-johar"}>Learn More</Button>
-    </LeftSection>
-</Section>
-);
+const Hero = (props) => {
+  const handleLearnMore = () => {
+    if (typeof window !== 'undefined') {
+      window.location.href = "https://www.linkedin.com/in/simarjeet-singh-johar";
+    }
+  };
+
+  return (
+    <Section row nopadding style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', padding: '60px 24px', marginTop: '50px' }}>
+      <LeftSection>
+        <HeroTitle>
+          Simarjeet Singh Johar
+        </HeroTitle>
+        <SectionDivider />
+        <HeroSubtitle>
+          <strong>Software Developer | Software Engineer | Full-Stack & Cloud Specialist</strong>
+          <br /><br />
+          Software developer with expertise in full-stack and cloud development, specializing in retail technology. 
+          Reduced operational costs by <strong>40%</strong> and cut bugs by <strong>25%</strong> through process improvements and automation. 
+          Improved site performance by <strong>15%</strong> by streamlining checkout and cart flows, saving <strong>7,000 user hours annually</strong>. 
+          Promoted from Backend Developer to Software Developer in 18 months.
+        </HeroSubtitle>
+        <HeroButton onClick={handleLearnMore}>
+          View LinkedIn Profile
+        </HeroButton>
+      </LeftSection>
+    </Section>
+  );
+};
 
 export default Hero;

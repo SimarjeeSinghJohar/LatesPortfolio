@@ -1,106 +1,192 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
+import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode, AboutSection } from './TimeLineStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { TimeLineData } from '../../constants/constants';
+import { LeftSection } from '../Hero/HeroStyles'
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
 const Timeline = () => {
-   const [activeItem, setActiveItem] = useState(0);
-   const carouselRef = useRef();
+  const [activeItem, setActiveItem] = useState(0);
+  const carouselRef = useRef();
 
-   const scroll = (node, left) => {
-     return node.scrollTo({ left, behavior: 'smooth' });
-   }
+  const scroll = (node, left) => {
+    return node.scrollTo({ left, behavior: 'smooth' });
+  }
 
-   const handleClick = (e, i) => {
-     e.preventDefault();
+  const handleClick = (e, i) => {
+    e.preventDefault();
 
-     if (carouselRef.current) {
-       const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
+    if (typeof document !== 'undefined' && carouselRef.current) {
+      const item = document.getElementById(`carousel_item-${i}`);
+      if (item) {
+        const container = carouselRef.current;
+        const itemRect = item.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        
+        // Calculate the scroll position to center the item
+        const scrollLeft = item.offsetLeft - (container.offsetWidth / 2) + (itemRect.width / 2);
+        
+        container.scrollTo({
+          left: Math.max(0, scrollLeft), // Prevent negative scroll
+          behavior: 'smooth'
+        });
+      }
+    }
+    setActiveItem(i);
+  }
+
+  const handleScroll = () => {
+    if (carouselRef.current && typeof document !== 'undefined') {
+      const container = carouselRef.current;
+      const scrollLeft = container.scrollLeft;
+      const containerWidth = container.offsetWidth;
+      const scrollWidth = container.scrollWidth;
+      const maxScroll = scrollWidth - containerWidth;
       
-       scroll(carouselRef.current, scrollLeft);
-     }
-   }
+      // If scrolled to the end, set to last item
+      if (scrollLeft >= maxScroll - 10) {
+        setActiveItem(TimeLineData.length - 1);
+        return;
+      }
+      
+      // If at the beginning, set to first item
+      if (scrollLeft <= 10) {
+        setActiveItem(0);
+        return;
+      }
+      
+      const containerCenter = scrollLeft + (containerWidth / 2);
+      
+      // Find which item is closest to the center of viewport
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      
+      TimeLineData.forEach((_, i) => {
+        const item = document.getElementById(`carousel_item-${i}`);
+        if (item) {
+          // Get the item's position relative to the container
+          const itemRect = item.getBoundingClientRect();
+          const containerRect = container.getBoundingClientRect();
+          const itemCenterInContainer = (itemRect.left - containerRect.left) + scrollLeft + (itemRect.width / 2);
+          const distance = Math.abs(containerCenter - itemCenterInContainer);
+          
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = i;
+          }
+        }
+      });
 
-   const handleScroll = () => {
-     if (carouselRef.current) {
-       const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
+      setActiveItem(closestIndex);
+    }
+  }
 
-       setActiveItem(index);
-     }
-   }
+  //snap back to beginning of scroll when window is resized
+  //avoids a bug where content is covered up if coming from smaller screen
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const handleResize = () => {
+      scroll(carouselRef.current, 0);
+    }
 
-    //snap back to beginning of scroll when window is resized
-    //avoids a bug where content is covered up if coming from smaller screen
-   useEffect(() => {
-     const handleResize = () => {
-       scroll(carouselRef.current, 0);
-     }
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-     window.addEventListener('resize', handleResize);
-   }, []);
+  // Add scroll event listener to update active dot
+  useEffect(() => {
+    const handleScrollEvent = () => handleScroll();
+    const carousel = carouselRef.current;
+    
+    if (carousel) {
+      carousel.addEventListener('scroll', handleScrollEvent);
+    }
+    
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('scroll', handleScrollEvent);
+      }
+    };
+  }, []);
 
   return (
-   <Section id='about'>
-     <SectionTitle>About Me</SectionTitle>
-     <SectionText>
-     </SectionText>
-     <CarouselContainer  ref={carouselRef}>
-       <>
-       {
-         TimeLineData.map((item, i) =>(
-           <CarouselMobileScrollNode  key={i} final={i === TOTAL_CAROUSEL_COUNT-1}>
-             <CarouselItem
-               index ={i}
-               id ={`carousel_item-${i}`}
-               active ={activeItem}
-               onClick= {(e) => handleClick(e, i)}
-               >
-                 <CarouselItemTitle>
-                   {item.year}
-                   <CarouselItemImg
-                    width="208"
-                    height="6"
-                    viewBox="0 0 208 6"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M2.5 5.5C3.88071 5.5 5 4.38071 5 3V3.5L208 3.50002V2.50002L5 2.5V3C5 1.61929 3.88071 0.5 2.5 0.5C1.11929 0.5 0 1.61929 0 3C0 4.38071 1.11929 5.5 2.5 5.5Z"
-                      fill="url(#paint0_linear)"
-                      fill-opacity="0.33"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear"
-                        x1="-4.30412e-10"
-                        y1="0.5"
-                        x2="208"
-                        y2="0.500295"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="white" />
-                        <stop
-                          offset="0.79478"
-                          stop-color="white"
-                          stop-opacity="0"
+    <Section style={{ zIndex: 600, position: 'relative' }}>
+      <AboutSection id='about'>
+        <SectionTitle>About Me</SectionTitle>
+        <CarouselContainer ref={carouselRef}>
+          <>
+            {
+              TimeLineData.map((item, i) => (
+                <CarouselMobileScrollNode key={i} final={i === TOTAL_CAROUSEL_COUNT - 1}>
+                  <CarouselItem
+                    index={i}
+                    id={`carousel_item-${i}`}
+                    active={activeItem}
+                    onClick={(e) => handleClick(e, i)}
+                  >
+                    <CarouselItemTitle>
+                      {item.year}
+                      <CarouselItemImg
+                        width="208"
+                        height="6"
+                        viewBox="0 0 208 6"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M2.5 5.5C3.88071 5.5 5 4.38071 5 3V3.5L208 3.50002V2.50002L5 2.5V3C5 1.61929 3.88071 0.5 2.5 0.5C1.11929 0.5 0 1.61929 0 3C0 4.38071 1.11929 5.5 2.5 5.5Z"
+                          fill="url(#paint0_linear)"
+                          fillOpacity="0.33"
                         />
-                      </linearGradient>
-                    </defs>
-                  </CarouselItemImg>
-                 </CarouselItemTitle>
-                 <CarouselItemText>
-                   {item.text}
-                 </CarouselItemText>
-             </CarouselItem>
-           </CarouselMobileScrollNode>
-         ))
-       }</>
-      
-     </CarouselContainer>
-   </Section>
+                        <defs>
+                          <linearGradient
+                            id="paint0_linear"
+                            x1="-4.30412e-10"
+                            y1="0.5"
+                            x2="208"
+                            y2="0.500295"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stopColor="white" />
+                            <stop
+                              offset="0.79478"
+                              stopColor="white"
+                              stopOpacity="0"
+                            />
+                          </linearGradient>
+                        </defs>
+                      </CarouselItemImg>
+                    </CarouselItemTitle>
+                    <CarouselItemText>
+                      {item.text}
+                    </CarouselItemText>
+                  </CarouselItem>
+                </CarouselMobileScrollNode>
+              ))
+            }</>
+
+        </CarouselContainer>
+        <CarouselButtons>
+          {TimeLineData.map((item, index) => (
+            <CarouselButton
+              key={index}
+              index={index}
+              active={activeItem}
+              onClick={(e) => handleClick(e, index)}
+              type="button"
+            >
+              <CarouselButtonDot />
+            </CarouselButton>
+          ))}
+        </CarouselButtons>
+      </AboutSection>
+    </Section>
   );
 };
 
