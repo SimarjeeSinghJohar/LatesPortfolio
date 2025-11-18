@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { List, ListContainer, ListItem, ListParagraph, ListTitle, ExpSection } from './ExperienceStyles';
+import { List, ListContainer, ListItem, ListParagraph, ListTitle, ExpSection, JobDate } from './ExperienceStyles';
 
 const Experience = () => (
   <Section id='exp' style={{ zIndex: 600, position: 'relative' }}>
@@ -14,17 +14,15 @@ const Experience = () => (
       <ListItem>
         <ListContainer>
           <ListTitle>
-            ClickSpace Inc. Calgary, AB -
-            Support Full-Stack Developer
+            Canadian Tire Corporation, Toronto, ON - Software Developer
           </ListTitle>
-          January 2022- February 2022
+          <JobDate>July 2022 - September 2025</JobDate>
           <ListParagraph>
             <ul>
-              <li> - Member of Support Development and Maintenance Team for application development.</li>
-              <li> - Handled several repositories every day, including live projects. Maintenance, Updates, and Support on different types of customized built Menus displayed on TV screens in retail stores. Deployment of updates through a customized tool ‘Clickspace.tv’. Also, handled several different  tasks, instead of just reviewing the job related tasks.</li>
-              <li> - Full-Stack Development of Menus using Flutter, Dart, Html, JavaScript, CSS, and Firebase as the database for various clients as per the requirements.</li>
-              <li> - Used Bitbucket to maintain the repositories with the use of GIT. Created Pull requests to get the code and design changes reviewed by Senior Developer and participated in code reviews/design discussions as well.</li>
-              <li> - Used HelpDesk tool for Ticketing, Confluence and Jira for Documentation.</li>
+              <li><strong>KTLO Site Success and Performance:</strong> Streamlined checkout and cart flows (1–1.5s faster), saving ~7,000 user hours annually. Optimized Node.js/TypeScript microservices with circuit breakers and Redis caching, boosting API performance by 15%.</li>
+              <li><strong>Azure GEN2 Migration:</strong> Piloted migration to Azure Functions, modernized authentication (OAuth2, JWT, SSO, MFA), cutting operational costs by 40%. Orchestrated data pipelines using Azure Queues, Service Bus, and Cosmos DB, improving page load times by 60ms.</li>
+              <li><strong>API Governance:</strong> Expanded test coverage from 72% to 90%, reducing bugs by 25%. Implemented Swagger/OpenAPI documentation system across 75% of microservices, slashing integration time by 20%.</li>
+              <li><strong>Leadership:</strong> Decreased incident resolution time from 6 hours to 2 hours. Increased feature velocity by 20% through collaborative strategies with Architects and Product Managers.</li>
             </ul>
           </ListParagraph>
         </ListContainer>
@@ -34,58 +32,31 @@ const Experience = () => (
       <ListItem>
         <ListContainer>
           <ListTitle>
-            Horizon Quest Inc. Fergus, ON -
-            Web Developer/IT
+            ClickSpace Inc., Calgary, AB - Intern, Full-Stack Support Developer
           </ListTitle>
-          October 2021 - January 2021
-
+          <JobDate>January 2022 - February 2022</JobDate>
           <ListParagraph>
             <ul>
-              <li> - Member of Marketing Website Operations team for Web Applications. </li>
-              <li> - Designed Wireframes using different tools including Draw.io, Adobe, Wix, and Envision. Maintenance, updates, and support for various clients’ websites. </li>
-              <li> - Developed marketing, e-commerce websites from scratch using WordPress, Shopify, Wix, Web.com, Html, JavaScript, CSS, PHP for various rural and urban web clients as per the requirements. SQL related activities such as use of phpMyAdmin and similar databases.</li>
-              <li> - As a part of DevOps teams, assisted in buying domains and hosting websites through ‘godaddy’, ‘host papa’, and ‘digital ocean’. Also launched a Live Portal.</li>
+              <li>Developed 5+ reusable Flutter widgets for retail screen interfaces, accelerating feature development by 20% and adhering to accessibility compliance.</li>
+              <li>Enhanced code quality through thorough Bitbucket code reviews, decreasing bug reports by 10%.</li>
+              <li>Built customized menus using Flutter, Dart, HTML, JavaScript, CSS, and Firebase for various retail clients.</li>
             </ul>
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <br />
 
-
-
       <ListItem>
         <ListContainer>
           <ListTitle>
-            RedGrape Technologies Private Limited -
-            Embedded C Intern
-
+            Horizon Quest Inc., Fergus, ON - Intern, Web Developer/IT
           </ListTitle>
-          July 2019 - Oct 2019
-
+          <JobDate>October 2021 - December 2022</JobDate>
           <ListParagraph>
             <ul>
-              <li> - Received training on usage of microcontrollers, Sensors, and Embedded C language to make an embedded system work. </li>
-              <li> - IOT and Embedded Systems development. </li>
-              <li> - Worked with microcontrollers and integrated Arduino with sensors like photoresistors and mini-LCD to make a blueprint of traffic lights system and display timing.</li>
-            </ul>
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <br />
-
-
-      <ListItem>
-        <ListContainer>
-          <ListTitle>
-            iLampion Digital Marketing Agency -
-            Front-End Developer
-          </ListTitle>
-          August 2018 – May 2019  
-          <ListParagraph>
-            <ul>
-              <li> - Worked as a part of the Website Development Operations team. </li>
-              <li> - Maintained and updated the agency website as per the market requirements and the addition of services. </li>
-              <li> - Followed Agile methodologies and participated in Analysis, Design and Development, Testing, and Implementation of Web Applications.</li>
+              <li>Engineered streamlined website deployment process using WordPress and Shopify, decreasing project completion time by 15% and enabling onboarding of 2 additional clients.</li>
+              <li>Optimized SQL queries, accelerating data retrieval speed by 20% and decreasing server downtime by 1 hour monthly.</li>
+              <li>Developed marketing and e-commerce websites from scratch for various clients using WordPress, Shopify, HTML, JavaScript, CSS, PHP.</li>
             </ul>
           </ListParagraph>
         </ListContainer>

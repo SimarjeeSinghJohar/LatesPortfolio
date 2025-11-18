@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
@@ -9,24 +8,16 @@ const NavBar = () => (
   <Container>
     <Div2>
       <LIST>
-        <Link href="#tech">
-          <NavLink>Technologies</NavLink>
-        </Link>
+        <NavLink href="#tech">Technologies</NavLink>
       </LIST>
       <li>
-        <Link href="#exp">
-          <NavLink>Experience</NavLink>
-        </Link>
+        <NavLink href="#exp">Experience</NavLink>
       </li>
       <li>
-        <Link href="#projects">
-          <NavLink>Projects</NavLink>
-        </Link>
+        <NavLink href="#projects">Projects</NavLink>
       </li>
       <li>
-        <Link href="#about">
-          <NavLink>About</NavLink>
-        </Link>
+        <NavLink href="#about">About</NavLink>
       </li>
     </Div2>
     

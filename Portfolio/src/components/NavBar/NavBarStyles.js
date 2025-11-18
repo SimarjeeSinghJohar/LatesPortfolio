@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
-  height: 40px;
+  min-height: 40px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr;
   flex-direction: row;
@@ -13,8 +13,20 @@ export const Container = styled.div`
   background-size: cover;
   position: sticky;
   top: 0;
-  z-index: 999.5;    /* stay above other content */
+  z-index: 500;
   border-bottom: 1px solid black;
+  transition: all 0.3s ease;
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    padding: 0.9rem;
+    min-height: 45px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    padding: 0.8rem;
+    grid-template-columns: repeat(6, 1fr);
+    min-height: 50px;
+  }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
@@ -23,7 +35,7 @@ export const Container = styled.div`
     grid-template-rows: repeat(2, 60px);
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
-    
+    padding: 0.5rem;
   }
 `;
 
@@ -74,10 +86,20 @@ export const Div2 = styled.div`
   color: #FE7E6D;
   flex-direction: row;
   justify-content: space-around;
+  transition: all 0.3s ease;
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    grid-area: 1 / 2 / 2 / 5;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    grid-area: 1 / 2 / 2 / 5;
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 2 / 3 / 6;
     width: max-content;
-    position: relative ;
+    position: relative;
   }
 `;
 export const Div3 = styled.div`
@@ -85,10 +107,16 @@ export const Div3 = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  transition: all 0.3s ease;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    grid-area: 1 / 5 / 2 / 7;
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     align-items: center;
     grid-area: 1 / 4 / 2 / 6;
-]  }
+  }
 `;
 
 // Navigation Links
