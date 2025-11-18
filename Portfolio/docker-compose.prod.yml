@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio-prod
+    restart: always
+    ports:
+      - "80:3000"
+      - "443:3000"
+    environment:
+      - NODE_ENV=production
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+      - SENDGRID_VERIFIED_SENDER=${SENDGRID_VERIFIED_SENDER}
+    env_file:
+      - .env.local
+    networks:
+      - portfolio-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "com.example.description=Portfolio Production Application"
+      - "com.example.version=1.0"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  portfolio-network:
+    driver: bridge
