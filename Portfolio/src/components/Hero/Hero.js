@@ -34,9 +34,9 @@ const Hero = (props) => {
             Ready to bring your next project to life? Let's connect.
           </span>
         </HeroSubtitle>
-        <HeroButton onClick={handleLearnMore}>
+        {/* <HeroButton onClick={handleLearnMore}>
           View My Work →
-        </HeroButton>
+        </HeroButton> */}
       </LeftSection>
     </Section>
   );

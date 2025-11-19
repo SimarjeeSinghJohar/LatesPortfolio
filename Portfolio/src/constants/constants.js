@@ -20,8 +20,8 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: 2018, text: 'Graduated with Bachelor of Technology in Computer Science & Engineering from Guru Gobind Singh Indraprastha University, New Delhi, India', },
-  { year: 2021, text: 'Earned Post Graduate Certificate in Business and Information System Architecture from Fanshawe College, London, ON with GPA 4.01/4.2', },
+  { year: '2014-2018', text: 'Graduated with Bachelor of Technology in Computer Science & Engineering from Guru Gobind Singh Indraprastha University, New Delhi, India', },
+  { year: '2020-2021', text: 'Earned Post Graduate Certificate in Business and Information System Architecture from Fanshawe College, London, ON with GPA 4.01/4.2', },
   { year: '2021-2022', text: 'Worked as Web Developer/IT Intern at Horizon Quest Inc., Fergus, ON. Engineered streamlined website deployment process using WordPress and Shopify, decreasing project completion time by 15%', },
   { year: '2022', text: 'Worked as Full-Stack Support Developer Intern at ClickSpace Inc., Calgary, AB. Developed 5+ reusable Flutter widgets for retail screen interfaces, accelerating feature development by 20%', },
   { year: '2022-2025', text: 'Software Developer at Canadian Tire Corporation, Toronto, ON. Promoted from Backend Developer in 18 months. Reduced operational costs by 40%, cut bugs by 25%, and improved site performance by 15%', },

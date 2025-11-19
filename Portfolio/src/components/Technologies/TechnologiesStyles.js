@@ -464,7 +464,7 @@ export const SkillName = styled.h3`
   font-size: 18px;
   font-weight: 600;
   color: #FFFFFF;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
 
@@ -475,19 +475,72 @@ export const SkillName = styled.h3`
 
   @media ${props => props.theme.breakpoints.md} {
     font-size: 17px;
-    margin-bottom: 14px;
   }
 
   @media ${props => props.theme.breakpoints.sm} {
     font-size: 16px;
-    margin-bottom: 12px;
+  }
+`;
+
+export const SkillLevel = styled.span`
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  animation: ${props => props.animate ? countUp : 'none'} 0.5s ease;
+  
+  ${props => {
+    switch(props.level) {
+      case 'Expert':
+        return `
+          background: linear-gradient(135deg, rgba(0, 230, 255, 0.2), rgba(0, 230, 255, 0.1));
+          color: #00E6FF;
+          border: 1px solid rgba(0, 230, 255, 0.4);
+          box-shadow: 0 0 10px rgba(0, 230, 255, 0.3);
+        `;
+      case 'Advanced':
+        return `
+          background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1));
+          color: #8A2BE2;
+          border: 1px solid rgba(138, 43, 226, 0.4);
+          box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+        `;
+      default:
+        return `
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+          color: #FFFFFF;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+        `;
+    }
+  }}
+
+  ${SkillCard}:hover & {
+    transform: scale(1.05);
+    ${props => {
+      switch(props.level) {
+        case 'Expert':
+          return `box-shadow: 0 0 20px rgba(0, 230, 255, 0.6);`;
+        case 'Advanced':
+          return `box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);`;
+        default:
+          return `box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);`;
+      }
+    }}
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 11px;
+    padding: 3px 10px;
   }
 `;
 
 export const ProgressBarContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  width: 100%;
 
   @media ${props => props.theme.breakpoints.sm} {
     gap: 12px;
@@ -496,12 +549,14 @@ export const ProgressBarContainer = styled.div`
 
 export const ProgressBar = styled.div`
   flex: 1;
-  height: 12px;
+  width: 100%;
+  height: 14px;
   background: rgba(138, 43, 226, 0.2);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(138, 43, 226, 0.3);
 
   &:after {
     content: '';
@@ -512,10 +567,10 @@ export const ProgressBar = styled.div`
     bottom: 0;
     background: linear-gradient(90deg, 
       transparent 0%, 
-      rgba(255, 255, 255, 0.1) 50%, 
+      rgba(255, 255, 255, 0.15) 50%, 
       transparent 100%
     );
-    animation: shimmer 2s infinite;
+    animation: shimmer 2.5s infinite;
   }
 
   @keyframes shimmer {
@@ -524,18 +579,20 @@ export const ProgressBar = styled.div`
   }
 
   @media ${props => props.theme.breakpoints.sm} {
-    height: 10px;
+    height: 12px;
   }
 `;
 
 export const ProgressFill = styled.div`
   height: 100%;
   width: ${props => props.animate ? `${props.percentage}%` : '0%'};
-  background: linear-gradient(90deg, #8A2BE2 0%, #00E6FF 100%);
-  border-radius: 10px;
-  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(90deg, #8A2BE2 0%, #00E6FF 50%, #8A2BE2 100%);
+  background-size: 200% 100%;
+  border-radius: 12px;
+  transition: width 1.8s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  box-shadow: 0 0 10px rgba(0, 230, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  animation: gradientShift 3s ease infinite;
 
   &:after {
     content: '';
@@ -543,29 +600,32 @@ export const ProgressFill = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    width: 20px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
-    border-radius: 0 10px 10px 0;
-  }
-`;
-
-export const PercentageText = styled.span`
-  font-size: 16px;
-  font-weight: 700;
-  color: #00E6FF;
-  min-width: 48px;
-  text-align: right;
-  font-family: 'Courier New', monospace;
-  transition: all 0.3s ease;
-  animation: ${props => props.animate ? countUp : 'none'} 0.5s ease;
-
-  ${SkillCard}:hover & {
-    color: #FFFFFF;
-    transform: scale(1.1);
+    width: 30px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+    border-radius: 0 12px 12px 0;
   }
 
-  @media ${props => props.theme.breakpoints.sm} {
-    font-size: 14px;
-    min-width: 42px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+    50% { opacity: 0.6; transform: translateY(-50%) scale(1.3); }
   }
 `;

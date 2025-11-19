@@ -296,8 +296,25 @@ export const CarouselButtons = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 12px;
   margin-bottom: 32px;
+  padding: 0 10px;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  @media ${props => props.theme.breakpoints.md} {
+    margin-top: 10px;
+    margin-bottom: 24px;
+    padding: 0 8px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    padding: 0 5px;
+    gap: 3px;
+  }
 `
 
 export const CarouselButton = styled.button`
@@ -336,6 +353,27 @@ export const CarouselButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  @media ${props => props.theme.breakpoints.md} {
+    padding: 8px;
+    margin: 0 6px;
+    transform: ${(props) => props.active === props.index ? `scale(1.3)` : `scale(1)`};
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    padding: 6px;
+    margin: 0 4px;
+    border-width: 1.5px;
+    transform: ${(props) => props.active === props.index ? `scale(1.2)` : `scale(0.9)`};
+    
+    &:before {
+      inset: -4px;
+    }
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 `
 
 export const CarouselButtonDot = styled.div`
@@ -345,6 +383,16 @@ export const CarouselButtonDot = styled.div`
   width: 8px;
   height: 8px;
   transition: all 0.3s ease;
+
+  @media ${props => props.theme.breakpoints.md} {
+    width: 7px;
+    height: 7px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    width: 5px;
+    height: 5px;
+  }
 `
 
 
