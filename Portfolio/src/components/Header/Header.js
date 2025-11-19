@@ -62,9 +62,9 @@ const Header = () => {
   ];
 
   const socialLinks = [
-    { icon: AiFillGithub, href: 'https://github.com/', label: 'GitHub', color: '#00E6FF' },
-    { icon: AiFillLinkedin, href: 'https://www.linkedin.com/', label: 'LinkedIn', color: '#8A2BE2' },
-    { icon: AiFillInstagram, href: 'https://www.instagram.com/', label: 'Instagram', color: '#FF1493' }
+    { icon: AiFillGithub, href: 'hhttps://github.com/SimarjeeSinghJohar', label: 'GitHub', color: '#00E6FF' },
+    { icon: AiFillLinkedin, href: 'https://www.linkedin.com/in/simarjeet-singh-johar/', label: 'LinkedIn', color: '#8A2BE2' },
+    { icon: AiFillInstagram, href: 'https://www.instagram.com/simarjeetjohar/', label: 'Instagram', color: '#FF1493' }
   ];
 
   return (
@@ -87,16 +87,28 @@ const Header = () => {
 
         <InfoPanel>
           <NameTitle>
-            <span className="first-name">Simarjeet</span>
-            <span className="last-name">Singh Johar</span>
+            <span className="first-name">SIMARJEET</span>
+            <span className="last-name">SINGH JOHAR</span>
           </NameTitle>
+          
           <RoleTag>
             <HiSparkles size={16} />
             <span>Software Developer</span>
           </RoleTag>
+          
+          <div className="availability-container">
+            <div className="availability-badge">
+              <span className="badge-icon">🚀</span>
+              <div className="badge-content">
+                <span className="badge-label">Status</span>
+                <span className="badge-status">Available for Opportunities</span>
+              </div>
+            </div>
+          </div>
+          
           <StatusIndicator>
             <span className="pulse-dot"></span>
-            <span className="text">Cloud-Native · AZ-Certified · SAFE@6 Practitioner</span>
+            <span className="certifications">Cloud-Native · Azure Certified · SAFE@6 Practitioner</span>
           </StatusIndicator>
         </InfoPanel>
       </ProfileSection>
@@ -129,7 +141,7 @@ const Header = () => {
               aria-label={social.label}
               $color={social.color}
             >
-              <social.icon size="2rem" />
+              <social.icon />
               <span className="tooltip">{social.label}</span>
             </SocialOrb>
           </MagneticWrapper>

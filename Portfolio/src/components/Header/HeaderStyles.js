@@ -76,6 +76,66 @@ const magneticFloat = keyframes`
   }
 `;
 
+const highlightGlow = keyframes`
+  0%, 100% {
+    text-shadow: 
+      0 0 8px rgba(0, 230, 255, 0.4),
+      0 0 15px rgba(138, 43, 226, 0.3);
+  }
+  50% {
+    text-shadow: 
+      0 0 12px rgba(138, 43, 226, 0.5),
+      0 0 20px rgba(0, 230, 255, 0.4);
+  }
+`;
+
+const shimmer = keyframes`
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+`;
+
+const sparkleRotate = keyframes`
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(10deg) scale(1.15);
+    opacity: 1;
+  }
+`;
+
+const textPulse = keyframes`
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+`;
+
+const badgeShine = keyframes`
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+`;
+
+const floatUpDown = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+`;
+
 export const Container = styled.header`
   position: fixed;
   top: 0;
@@ -108,13 +168,13 @@ export const Container = styled.header`
   @media ${({ theme }) => theme.breakpoints.md} {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    padding: 1.4rem 2rem;
-    gap: 1.5rem;
+    padding: ${({ $scrolled }) => ($scrolled ? '0.8rem 1.5rem' : '1rem 2rem')};
+    gap: 1.2rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    padding: 1.2rem 1rem;
-    gap: 1rem;
+    padding: ${({ $scrolled }) => ($scrolled ? '0.6rem 1rem' : '0.8rem 1rem')};
+    gap: 0.8rem;
   }
 `;
 
@@ -193,7 +253,8 @@ export const ProfileSection = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.sm} {
     flex-direction: row;
-    gap: 1.5rem;
+    gap: 0.8rem;
+    align-items: flex-start;
   }
 `;
 
@@ -252,8 +313,13 @@ export const HolographicFrame = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
+    
+    &::before {
+      inset: -6px;
+      filter: blur(12px);
+    }
   }
 `;
 
@@ -312,12 +378,156 @@ export const HoloOverlay = styled.div`
 export const InfoPanel = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.8rem;
   position: relative;
   z-index: 10;
+  max-width: 600px;
+  flex: 1;
+  
+  .availability-container {
+    position: relative;
+    width: fit-content;
+  }
+  
+  .availability-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.75rem 0.4rem 0.5rem;
+    width: fit-content;
+    
+    background: linear-gradient(
+      135deg,
+      rgba(10, 15, 25, 0.95) 0%,
+      rgba(15, 20, 35, 0.98) 100%
+    );
+    
+    border: 1px solid rgba(0, 230, 255, 0.4);
+    border-radius: 50px;
+    backdrop-filter: blur(20px) saturate(180%);
+    
+    box-shadow: 
+      0 4px 20px rgba(0, 230, 255, 0.15),
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 230, 255, 0.15) 50%,
+        transparent 100%
+      );
+      animation: ${shimmer} 3s ease-in-out infinite;
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 230, 255, 0.7);
+      box-shadow: 
+        0 6px 28px rgba(0, 230, 255, 0.3),
+        0 12px 40px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      
+      .badge-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+      
+      .badge-status {
+        background-position: 200% center;
+      }
+    }
+  }
+  
+  .badge-icon {
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 6px rgba(0, 230, 255, 0.5));
+  }
+  
+  .badge-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    line-height: 1.1;
+  }
+  
+  .badge-label {
+    font-size: 0.55em;
+    font-weight: 600;
+    color: rgba(0, 230, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  
+  .badge-status {
+    font-size: 0.7em;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00E6FF 0%, #FFFFFF 50%, #00E6FF 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.02em;
+    transition: background-position 0.3s ease;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    max-width: 500px;
+    
+    .availability-badge {
+      padding: 0.6rem 1.1rem;
+      gap: 0.5rem;
+      
+      .availability-text {
+        font-size: 0.84em;
+        letter-spacing: 0.09em;
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    max-width: 100%;
+  }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    gap: 0.4rem;
+    gap: 0.3rem;
+    max-width: 100%;
+    
+    .availability-badge {
+      padding: 0.25rem 0.5rem 0.25rem 0.35rem;
+      gap: 0.25rem;
+      
+      .badge-icon {
+        font-size: 0.85em;
+      }
+    }
+    
+    .badge-content {
+      gap: 0.05rem;
+    }
+    
+    .badge-label {
+      font-size: 0.48em;
+    }
+    
+    .badge-status {
+      font-size: 0.55em;
+    }
   }
 `;
 
@@ -325,24 +535,31 @@ export const NameTitle = styled.h1`
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   
   .first-name {
-    font-size: 1.8rem;
-    background: linear-gradient(135deg, #00E6FF 0%, #FFF 50%, #00BFFF 100%);
+    font-size: 2rem;
+    background: linear-gradient(135deg, #00E6FF 0%, #FFFFFF 40%, #8A2BE2 70%, #00BFFF 100%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
+    animation: ${shimmer} 8s linear infinite;
+    text-shadow: 0 0 30px rgba(0, 230, 255, 0.3);
   }
   
   .last-name {
-    font-size: 1.4rem;
-    color: rgba(255, 255, 255, 0.9);
-    letter-spacing: 0.1em;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.95) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+    font-weight: 700;
   }
 
   @media ${({ theme }) => theme.breakpoints.lg} {
@@ -351,8 +568,15 @@ export const NameTitle = styled.h1`
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    .first-name { font-size: 1.3rem; }
-    .last-name { font-size: 1rem; }
+    gap: 0.15rem;
+    .first-name { 
+      font-size: 0.95rem;
+      line-height: 1.1;
+    }
+    .last-name { 
+      font-size: 0.75rem;
+      line-height: 1.1;
+    }
   }
 `;
 
@@ -375,38 +599,61 @@ export const RoleTag = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.8rem;
-    gap: 0.4rem;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    gap: 0.25rem;
+    
+    svg {
+      width: 10px;
+      height: 10px;
+    }
   }
 `;
 
 export const StatusIndicator = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  gap: 0.8rem;
+  font-size: 0.88rem;
   
   .pulse-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: #00FFA3;
-    box-shadow: 0 0 12px rgba(0, 255, 163, 0.9);
+    background: linear-gradient(135deg, #00FFA3 0%, #00E6FF 100%);
+    box-shadow: 
+      0 0 15px rgba(0, 255, 163, 1),
+      0 0 30px rgba(0, 255, 163, 0.6),
+      inset 0 0 5px rgba(255, 255, 255, 0.5);
     animation: ${glowPulse} 2s ease-in-out infinite;
+    flex-shrink: 0;
   }
   
-  .text {
-    letter-spacing: 0.05em;
+  .certifications {
+    display: block;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.08em;
+    font-size: 0.92em;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    font-size: 0.85rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+    gap: 0.4rem;
     
     .pulse-dot {
       width: 6px;
       height: 6px;
+    }
+    
+    .certifications {
+      font-size: 0.8em;
+      letter-spacing: 0.04em;
     }
   }
 `;
@@ -415,14 +662,18 @@ export const StatusIndicator = styled.div`
 export const NavSection = styled.nav`
   grid-column: 2;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   position: relative;
   z-index: 10;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 
   @media ${({ theme }) => theme.breakpoints.lg} {
-    gap: 1.2rem;
+    gap: 0.8rem;
+    max-width: 600px;
   }
 
   @media ${({ theme }) => theme.breakpoints.md} {
@@ -434,15 +685,25 @@ export const NavSection = styled.nav`
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    gap: 0.8rem;
+    gap: 0.5rem;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
 export const NavCard = styled.a`
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.9rem 1.4rem;
+  gap: 1rem;
+  padding: 1.1rem 1.6rem;
   background: ${({ $active }) =>
     $active
       ? 'rgba(0, 230, 255, 0.15)'
@@ -480,54 +741,60 @@ export const NavCard = styled.a`
   }
 
   @media ${({ theme }) => theme.breakpoints.lg} {
-    padding: 0.8rem 1.2rem;
-    gap: 0.7rem;
+    padding: 1rem 1.4rem;
+    gap: 0.9rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.md} {
-    padding: 0.7rem 1rem;
-    gap: 0.6rem;
+    padding: 0.9rem 1.2rem;
+    gap: 0.8rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    padding: 0.6rem 0.9rem;
-    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    gap: 0.4rem;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
   }
 `;
 
 export const NavIcon = styled.svg`
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   color: inherit;
+  flex-shrink: 0;
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 `;
 
 export const NavLabel = styled.div`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 
   @media ${({ theme }) => theme.breakpoints.lg} {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 `;
 
 export const NavMeta = styled.div`
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   opacity: 0.7;
   text-transform: uppercase;
   letter-spacing: 0.15em;
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    font-size: 0.65rem;
+    display: none; // Hide meta text on mobile
   }
 `;
 
@@ -549,14 +816,15 @@ export const SocialSection = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    gap: 1.2rem;
+    gap: 0.5rem;
+    justify-content: center;
   }
 `;
 
 export const SocialOrb = styled.a`
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -569,6 +837,11 @@ export const SocialOrb = styled.a`
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
   .tooltip {
     position: absolute;
@@ -599,13 +872,28 @@ export const SocialOrb = styled.a`
   }
 
   @media ${({ theme }) => theme.breakpoints.md} {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
+    
+    svg {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    width: 42px;
-    height: 42px;
+    width: 28px;
+    height: 28px;
+    border-width: 1.5px;
+    
+    svg {
+      width: 0.95rem;
+      height: 0.95rem;
+    }
+    
+    .tooltip {
+      display: none; // Hide tooltips on mobile
+    }
   }
 `;
 

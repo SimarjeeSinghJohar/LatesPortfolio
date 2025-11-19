@@ -14,27 +14,27 @@ import {
   ProgressBarContainer,
   ProgressBar,
   ProgressFill,
-  PercentageText
+  SkillLevel
 } from './TechnologiesStyles';
 
-// Skills data with proficiency percentages
+// Skills data with proficiency levels
 const skillsData = [
-  { name: 'TypeScript', percentage: 92, category: 'frontend' },
-  { name: 'JavaScript', percentage: 90, category: 'frontend' },
-  { name: 'React.js', percentage: 88, category: 'frontend' },
-  { name: 'Node.js', percentage: 95, category: 'backend' },
-  { name: 'Express.js', percentage: 92, category: 'backend' },
-  { name: 'Java', percentage: 85, category: 'backend' },
-  { name: 'Spring Boot', percentage: 82, category: 'backend' },
-  { name: 'Azure Cosmos DB', percentage: 90, category: 'database' },
-  { name: 'MongoDB', percentage: 85, category: 'database' },
-  { name: 'PostgreSQL', percentage: 88, category: 'database' },
-  { name: 'Azure SQL', percentage: 85, category: 'database' },
-  { name: 'Azure Functions', percentage: 90, category: 'cloud' },
-  { name: 'Docker', percentage: 85, category: 'cloud' },
-  { name: 'Kubernetes', percentage: 80, category: 'cloud' },
-  { name: 'CI/CD', percentage: 88, category: 'cloud' },
-  { name: 'REST API', percentage: 95, category: 'tools' }
+  { name: 'TypeScript', percentage: 92, level: 'Expert', category: 'frontend' },
+  { name: 'JavaScript', percentage: 90, level: 'Expert', category: 'frontend' },
+  { name: 'React.js', percentage: 88, level: 'Advanced', category: 'frontend' },
+  { name: 'Node.js', percentage: 95, level: 'Expert', category: 'backend' },
+  { name: 'Express.js', percentage: 92, level: 'Expert', category: 'backend' },
+  { name: 'Java', percentage: 85, level: 'Advanced', category: 'backend' },
+  { name: 'Spring Boot', percentage: 82, level: 'Advanced', category: 'backend' },
+  { name: 'Azure Cosmos DB', percentage: 90, level: 'Expert', category: 'database' },
+  { name: 'MongoDB', percentage: 85, level: 'Advanced', category: 'database' },
+  { name: 'PostgreSQL', percentage: 88, level: 'Advanced', category: 'database' },
+  { name: 'Azure SQL', percentage: 85, level: 'Advanced', category: 'database' },
+  { name: 'Azure Functions', percentage: 90, level: 'Expert', category: 'cloud' },
+  { name: 'Docker', percentage: 85, level: 'Advanced', category: 'cloud' },
+  { name: 'Kubernetes', percentage: 80, level: 'Advanced', category: 'cloud' },
+  { name: 'CI/CD', percentage: 88, level: 'Advanced', category: 'cloud' },
+  { name: 'REST API', percentage: 95, level: 'Expert', category: 'tools' }
 ];
 
 const Technologies = () => {
@@ -91,7 +91,15 @@ const Technologies = () => {
               key={skill.name}
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <SkillName>{skill.name}</SkillName>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                <SkillName>{skill.name}</SkillName>
+                <SkillLevel 
+                  level={skill.level}
+                  animate={animatedSkills.includes(skill.name)}
+                >
+                  {skill.level}
+                </SkillLevel>
+              </div>
               <ProgressBarContainer>
                 <ProgressBar>
                   <ProgressFill 
@@ -99,11 +107,6 @@ const Technologies = () => {
                     animate={animatedSkills.includes(skill.name)}
                   />
                 </ProgressBar>
-                <PercentageText 
-                  animate={animatedSkills.includes(skill.name)}
-                >
-                  {animatedSkills.includes(skill.name) ? `${skill.percentage}%` : '0%'}
-                </PercentageText>
               </ProgressBarContainer>
             </SkillCard>
           ))}

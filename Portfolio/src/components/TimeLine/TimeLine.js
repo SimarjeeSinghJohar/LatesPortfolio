@@ -118,7 +118,7 @@ const Timeline = () => {
   return (
     <Section style={{ zIndex: 600, position: 'relative' }}>
       <AboutSection id='about'>
-        <SectionTitle>About Me</SectionTitle>
+        <SectionTitle>My Timeline</SectionTitle>
         <CarouselContainer ref={carouselRef}>
           <>
             {

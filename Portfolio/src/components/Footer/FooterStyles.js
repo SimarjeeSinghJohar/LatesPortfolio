@@ -62,8 +62,9 @@ export const FooterWrapper = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.sm} {
-    padding: 1rem 16px 24px;
-    width: calc(100vw - 32px);
+    padding: 1.2rem 12px 20px;
+    width: calc(100vw - 24px);
+    max-width: 100%;
   }
 `
 
@@ -111,11 +112,21 @@ export const LinkItem = styled.a`
 	}
 
 	@media ${props => props.theme.breakpoints.sm} {
-		font-size: 14px;
+		font-size: 13px;
 		line-height: 20px;
-		margin-bottom: 10px;
-		display: flex;
-		align-items: center;
+		margin-bottom: 12px;
+		display: block;
+		word-break: break-word;
+		padding: 8px 12px;
+		text-align: center;
+		
+		&:before {
+			display: none;
+		}
+		
+		&:hover {
+			left: 0;
+		}
 	}
 `
 
@@ -241,8 +252,10 @@ export const LinkList = styled.ul`
 	}
 	@media ${props => props.theme.breakpoints.sm} {
 		width: 100%;
-		padding: 32px 4px 16px;
-		gap: 5px;
+		padding: 24px 0 12px;
+		gap: 24px;
+		grid-template-columns: 1fr;
+		text-align: center;
 	}
 `
 
@@ -251,6 +264,16 @@ export const LinkColumn = styled.div`
 	flex-direction: column;
 	max-width: 220px;
 	width: 100%;
+	
+	@media ${props => props.theme.breakpoints.sm} {
+		max-width: 100%;
+		align-items: center;
+		margin-bottom: 20px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 `
 export const LinkTitle = styled.h4`
 	font-style: normal;
