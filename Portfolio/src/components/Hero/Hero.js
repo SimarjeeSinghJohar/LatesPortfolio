@@ -6,7 +6,7 @@ import { LeftSection, HeroTitle, HeroSubtitle, HeroButton } from './HeroStyles';
 const Hero = (props) => {
   const handleLearnMore = () => {
     if (typeof window !== 'undefined') {
-      window.location.href = "https://www.linkedin.com/in/simarjeet-singh-johar";
+      window.location.href = "";
     }
   };
 

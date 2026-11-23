@@ -160,7 +160,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ### 3. Clone your repository
 ```bash
-git clone https://github.com/SimarjeeSinghJohar/LatesPortfolio.git
+git clone 
 cd LatesPortfolio/Portfolio
 ```
 
@@ -327,5 +327,5 @@ docker logs portfolio-app > backup-$(date +%Y%m%d).log
 ## Support
 
 For issues or questions:
-- GitHub: https://github.com/SimarjeeSinghJohar/LatesPortfolio/issues
-- Email: simarjitjohar319@gmail.com
+- GitHub: 
+- Email: 

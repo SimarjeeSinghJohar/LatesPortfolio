@@ -11,7 +11,7 @@ Your portfolio uses **EmailJS** to send contact form submissions to your Gmail. 
 1. Go to **Email Services** in the left sidebar
 2. Click **Add New Service**
 3. Select **Gmail**
-4. Click **Connect Account** and authorize with your Gmail (simarjitjohar319@gmail.com)
+4. Click **Connect Account** and authorize with your Gmail ()
 5. Give it a name (e.g., "Portfolio Gmail")
 6. Copy the **Service ID** (looks like `service_abc123`)
 
@@ -54,7 +54,7 @@ Your portfolio uses **EmailJS** to send contact form submissions to your Gmail. 
        from_email: formData.email,
        subject: formData.subject,
        message: formData.message,
-       to_email: 'simarjitjohar319@gmail.com'
+       to_email: ''
      },
      'YOUR_PUBLIC_KEY'       // Replace with your Public Key from Step 4
    );
@@ -81,7 +81,7 @@ await emailjs.send(
     from_email: formData.email,
     subject: formData.subject,
     message: formData.message,
-    to_email: 'simarjitjohar319@gmail.com'
+    to_email: ''
   },
   'AbC123xYz456'             // Your actual Public Key
 );

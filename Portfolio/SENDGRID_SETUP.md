@@ -15,7 +15,7 @@
 3. Fill in your information:
    - From Email: connect@simarjeetsinghjohar.com
    - From Name: Simarjeet Singh Johar
-   - Reply To: simarjitjohar319@gmail.com (or same as From Email)
+   - Reply To:  (or same as From Email)
 4. Click "Create"
 5. Check your email and verify the sender
 
@@ -41,7 +41,7 @@ npm run dev
 1. Go to http://localhost:3000
 2. Navigate to the contact form
 3. Fill out and submit
-4. Check simarjitjohar319@gmail.com for the email!
+4. Check  for the email!
 
 ## Important Notes
 
@@ -49,7 +49,7 @@ npm run dev
 - When deploying to Vercel/Netlify, add these environment variables in their dashboard
 - SendGrid free tier: 100 emails/day forever
 - Emails sent from: connect@simarjeetsinghjohar.com
-- Emails received at: simarjitjohar319@gmail.com
+- Emails received at: 
 
 ## Troubleshooting
 

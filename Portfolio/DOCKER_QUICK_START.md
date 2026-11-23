@@ -6,7 +6,7 @@ This guide shows you how to quickly deploy your portfolio using Docker.
 
 ```bash
 # Clone, configure, and deploy
-git clone https://github.com/SimarjeeSinghJohar/LatesPortfolio.git
+git clone 
 cd LatesPortfolio/Portfolio
 cp .env.local.example .env.local
 # Edit .env.local with your SendGrid credentials

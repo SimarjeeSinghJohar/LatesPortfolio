@@ -108,7 +108,7 @@ curl -fsSL https://get.docker.com | sh
 sudo usermod -aG docker $USER
 
 # Clone repository
-git clone https://github.com/SimarjeeSinghJohar/LatesPortfolio.git
+git clone 
 cd LatesPortfolio/Portfolio
 
 # Setup environment
@@ -267,8 +267,8 @@ docker-compose -f docker-compose.prod.yml up -d --no-deps --build portfolio
 ## 📞 Support
 
 - **Documentation:** See DOCKER_DEPLOYMENT.md for detailed guide
-- **Issues:** https://github.com/SimarjeeSinghJohar/LatesPortfolio/issues
-- **Email:** simarjitjohar319@gmail.com
+- **Issues:** 
+- **Email:**
 
 ## 🎉 Next Steps
 

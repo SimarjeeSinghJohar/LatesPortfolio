@@ -62,9 +62,9 @@ const Header = () => {
   ];
 
   const socialLinks = [
-    { icon: AiFillGithub, href: 'hhttps://github.com/SimarjeeSinghJohar', label: 'GitHub', color: '#00E6FF' },
-    { icon: AiFillLinkedin, href: 'https://www.linkedin.com/in/simarjeet-singh-johar/', label: 'LinkedIn', color: '#8A2BE2' },
-    { icon: AiFillInstagram, href: 'https://www.instagram.com/simarjeetjohar/', label: 'Instagram', color: '#FF1493' }
+    { icon: AiFillGithub, href: '', label: 'GitHub', color: '#00E6FF' },
+    { icon: AiFillLinkedin, href: '', label: 'LinkedIn', color: '#8A2BE2' },
+    { icon: AiFillInstagram, href: '', label: 'Instagram', color: '#FF1493' }
   ];
 
   return (

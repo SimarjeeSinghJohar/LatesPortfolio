@@ -138,7 +138,7 @@ const Contact = () => {
       console.error('Error sending message:', error);
       setSubmitStatus({
         type: 'error',
-        message: 'Oops! Something went wrong. Please try again or email me directly at simarjitjohar319@gmail.com'
+        message: 'Oops! Something went wrong. Please try again or email me directly at'
       });
     } finally {
       setIsSubmitting(false);
@@ -272,8 +272,8 @@ const Contact = () => {
                 <InfoIcon>📧</InfoIcon>
                 <InfoText>
                   <strong>Email</strong>
-                  <a href="mailto:simarjitjohar319@gmail.com" style={{ color: '#00E6FF', textDecoration: 'none' }}>
-                    simarjitjohar319@gmail.com
+                  <a href="mailto:" style={{ color: '#00E6FF', textDecoration: 'none' }}>
+                    
                   </a>
                 </InfoText>
               </InfoItem>
@@ -291,7 +291,7 @@ const Contact = () => {
 
             <SocialLinks>
               <SocialLink 
-                href="https://github.com/SimarjeeSinghJohar" 
+                href="" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
@@ -302,7 +302,7 @@ const Contact = () => {
               </SocialLink>
 
               <SocialLink 
-                href="https://linkedin.com/in/simarjeet-singh-johar" 
+                href="" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
@@ -313,7 +313,7 @@ const Contact = () => {
               </SocialLink>
 
               <SocialLink 
-                href="https://twitter.com/simarjeet" 
+                href="" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Twitter Profile"

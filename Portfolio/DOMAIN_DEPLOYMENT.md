@@ -62,7 +62,7 @@ su - portfolio
 
 ```bash
 # Clone your repository
-git clone https://github.com/SimarjeeSinghJohar/LatesPortfolio.git
+git clone 
 cd LatesPortfolio/Portfolio
 
 # Create environment file
@@ -512,7 +512,7 @@ ssh root@$SERVER_IP << EOF
     curl -fsSL https://get.docker.com | sh
     
     # Clone repository
-    git clone https://github.com/SimarjeeSinghJohar/LatesPortfolio.git
+    git clone 
     cd LatesPortfolio/Portfolio
     
     # Configure environment
@@ -577,8 +577,8 @@ chmod +x deploy-to-domain.sh
 
 Need help? Check these resources:
 - **Documentation:** DOCKER_DEPLOYMENT.md
-- **GitHub Issues:** https://github.com/SimarjeeSinghJohar/LatesPortfolio/issues
-- **Email:** simarjitjohar319@gmail.com
+- **GitHub Issues:**
+- **Email:** 
 
 ---
 

@@ -10,11 +10,11 @@ const Footer = () => {
     <LinkList>
     <LinkColumn>
     <LinkTitle>EMAIL</LinkTitle>
-    <LinkItem href="mailto:simarjitjohar319@gmail.com">simarjitjohar319@gmail.com</LinkItem>
+    <LinkItem href="mailto:"></LinkItem>
     </LinkColumn>
     <LinkColumn>
     <LinkTitle>LINKEDIN</LinkTitle>
-    <LinkItem href="https://linkedin.com/in/simarjeet-singh-johar" target="_blank" rel="noopener noreferrer">linkedin.com/in/simarjeet-singh-johar</LinkItem>
+    <LinkItem href="" target="_blank" rel="noopener noreferrer"></LinkItem>
     </LinkColumn>
     </LinkList>
   </FooterWrapper>

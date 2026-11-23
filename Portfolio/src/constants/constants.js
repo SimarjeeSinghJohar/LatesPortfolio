@@ -4,8 +4,8 @@ export const projects = [
     description: "Built automated course/section planning system for Fanshawe College to eliminate manual formatting and increase operational efficiency. Developed as the main developer throughout the capstone project, creating APIs in the backend and integrating them to the front-end using Java Spring Boot, PostgreSQL, and JSP. The system manages course planning, eliminates incorrect formatting, and enhances productivity for the college's planning operations.",
     image: '/images/termblock.png',
     tags: ['Java', 'Spring Boot', 'PostgreSQL', 'JSP'],
-    source: 'https://github.com/Fanshawe-LSC-Database-Planning/LSC-Planning-repository.git',
-    visit: 'https://github.com/Fanshawe-LSC-Database-Planning/LSC-Planning-repository.git',
+    source: '',
+    visit: '',
     id: 0,
   },
   {
@@ -13,8 +13,8 @@ export const projects = [
     description: "Real-time chat application built with Node.js, MongoDB, and Socket.io. Features automatic message synchronization across multiple browsers with real-time notifications and updates. Implemented using asynchronous functionalities including Callbacks, Promises, and async/await patterns. Integrated mLabs database framework for MongoDB data management, creating a robust and scalable messaging platform.",
     image: '/images/chat.png',
     tags: ['Node.js', 'MongoDB', 'Socket.io', 'Express.js'],
-    source: 'https://github.com/SimarjeetSinghJohar/Express.git',
-    visit: 'https://github.com/SimarjeetSinghJohar/Express.git',
+    source: '',
+    visit: '',
     id: 1,
   },
 ];

@@ -90,7 +90,7 @@ if [ -d "LatesPortfolio" ]; then
     cd LatesPortfolio/Portfolio
     git pull
 else
-    git clone https://github.com/SimarjeeSinghJohar/LatesPortfolio.git
+    git clone 
     cd LatesPortfolio/Portfolio
 fi
 
