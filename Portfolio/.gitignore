@@ -1,13 +1,9 @@
 # Node.js dependencies
 node_modules/
-npm-debug.log
-yarn-error.log
+npm-debug.log*
 yarn-debug.log*
+yarn-error.log*
 .pnpm-debug.log*
-# Keep package-lock.json for Docker builds
-# package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
 # Build output
 dist/
@@ -15,14 +11,15 @@ build/
 .next/
 out/
 *.tsbuildinfo
+.eslintcache
 
 # Environment files
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-*.env.local
+.env.*
+!.env.example
+!.env.*.example
+.envrc
+.envrc.local
 
 # Logs
 *.log
@@ -50,4 +47,4 @@ Thumbs.db
 .cache/
 
 # Vercel
-.vercel
+.vercel/
